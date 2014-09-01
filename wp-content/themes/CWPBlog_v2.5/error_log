@@ -1,0 +1,2 @@
+[10-Apr-2014 11:25:27 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/codeinwp/public_html/blog/wp-content/themes/CodeinwpBlogThemev24/index.php on line 7
+[10-Apr-2014 11:25:42 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/codeinwp/public_html/blog/wp-content/themes/CodeinwpBlogThemev24/index.php on line 7

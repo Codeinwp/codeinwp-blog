@@ -1,0 +1,31 @@
+/* Editor
+-------------------------------------------------------------- */
+.decp-active .switch-decp {
+    background-color: #F4F4F4;
+    border-bottom-color: #F4F4F4;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #CCCCCC;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #CCCCCC;
+    border-top-color: #CCCCCC;
+    color: #555555;
+}
+
+.decp-active .quicktags-toolbar {
+    display: none;
+}
+
+.wpb_switch-to-quick-preview{
+	margin-left: 10px !important;	
+}
+
+#dry-quick-preview{
+	display: none;
+}
+
+iframe#preview
+{
+opacity: 0;
+}
