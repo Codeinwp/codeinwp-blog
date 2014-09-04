@@ -93,8 +93,8 @@ function cwp_entry_meta() {
 
 
 	$date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
+		esc_attr( the_modified_time( 'c' ) ),
+		esc_html( the_modified_time() )
 	);
 
 	$author = sprintf( '<span class="author vcard"><b>%1$s</b></span>',

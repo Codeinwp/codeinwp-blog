@@ -29,6 +29,7 @@
 		<?php
 		if ( wp_is_mobile() ) {
 		//	echo 'Se afiseaza pe mobil';
+		//is just a test
 		}
 		?>
 		<div id="logo">
