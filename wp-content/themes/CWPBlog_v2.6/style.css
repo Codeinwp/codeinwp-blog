@@ -1684,10 +1684,20 @@ footer .fmenu input[type=submit]:hover {
 	margin-bottom: 20px;
 }
 
+.presentation-shortcode .presentation-left {
+	width: 270px;
+	float: left;
+}
+
+.presentation-shortcode .presentation-left.presentation-left-full {
+	width: 100% !important;
+}
+
 .presentation-shortcode .presentation-button-one {
-	width: 115px;
 	height: 40px;
 	background: #2C639A;
+	padding: 0 25px;
+	display: block;
 	line-height: 40px;
 	text-align: center;
 	font-size: 14px;
@@ -1696,14 +1706,19 @@ footer .fmenu input[type=submit]:hover {
 }
 
 .presentation-shortcode .presentation-button-two {
-	width: 115px;
 	height: 40px;
 	background: #ec6551;
+	padding: 0 25px;
+	display: block;
 	line-height: 40px;
 	text-align: center;
 	font-size: 14px;
 	color: #fff !important;
 	float: right;
+}
+
+.presentation-shortcode .presentation-button-two.presentation-button-two-align-left {
+	float: left;
 }
 
 .presentation-shortcode .presentation-button-one:hover,
@@ -1713,6 +1728,20 @@ footer .fmenu input[type=submit]:hover {
 	-ms-opacity: 0.9;
 	-o-opacity: 0.9;
 	opacity: 0.9;
+}
+
+.presentation-shortcode .presentation-price {
+	height: 40px;
+	line-height: 40px;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	color: #2C639A;
+	float: right;
+}
+
+.presentation-shortcode .presentation-price span {
+	color: #EC6551;
 }
 
 @media only screen and (max-width: 320px) {
@@ -2077,6 +2106,21 @@ footer .fmenu input[type=submit]:hover {
 	.widget_newsletter form input[type="submit"] {
 		width: 100% !important;
 		margin-top: 4px;
+	}
+
+	.presentation-shortcode .presentation-left {
+		width: auto;
+	}
+
+	.presentation-shortcode .presentation-button-two {
+		margin-top: 5px;
+		clear: both;
+		float: left;
+	}
+
+	.presentation-shortcode .presentation-price {
+		height: 90px;
+		line-height: 90px;
 	}
 
 }

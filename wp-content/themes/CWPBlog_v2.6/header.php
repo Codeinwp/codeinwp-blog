@@ -22,6 +22,18 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/cwpfavicon.png">
+	<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "http://www.codeinwp.com/blog/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "http://www.codeinwp.com/blog/?s={search_term}",
+    "query-input": "required name=search_term"
+  }
+}
+</script>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

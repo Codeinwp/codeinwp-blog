@@ -10,6 +10,7 @@
  */
 require_once ( 'inc/custom-widgets.php' ); // Custom Widgets
 require_once ( 'inc/custom-shortcodes.php' ); // Custom Shortcodes
+require_once ( 'inc/metaboxes/custom-metaboxes.php' ); // Custom Metaboxes
 /**
  *  Theme Name Scripts
  */
@@ -92,10 +93,9 @@ function cwp_entry_meta() {
 	$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
 
 
-	$date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',
-		esc_attr( the_modified_time( 'c' ) ),
-		esc_html( the_modified_time() )
-	);
+
+
+	$date = '<time class="entry-date">'.the_modified_time( 'F jS, Y' ).'</time>';
 
 	$author = sprintf( '<span class="author vcard"><b>%1$s</b></span>',
 		get_the_author()
