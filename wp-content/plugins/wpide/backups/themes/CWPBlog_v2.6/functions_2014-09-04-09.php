@@ -1,5 +1,5 @@
 <?php /* start WPide restore code */
-                                    if ($_POST["restorewpnonce"] === "96f4d93c0ff08eb78595e3a286383c3305e8fa5cf7"){
+                                    if ($_POST["restorewpnonce"] === "3f763f2aa31d932f3598c83b54c3bc8105e8fa5cf7"){
                                         if ( file_put_contents ( "/home/codeinwp/public_html/blog/wp-content/themes/CWPBlog_v2.6/functions.php" ,  preg_replace("#<\?php /\* start WPide(.*)end WPide restore code \*/ \?>#s", "", file_get_contents("/home/codeinwp/public_html/blog/wp-content/plugins/wpide/backups/themes/CWPBlog_v2.6/functions_2014-09-04-09.php") )  ) ){
                                             echo "Your file has been restored, overwritting the recently edited file! \n\n The active editor still contains the broken or unwanted code. If you no longer need that content then close the tab and start fresh with the restored file.";
                                         }
@@ -101,10 +101,9 @@ function cwp_entry_meta() {
 	$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
 
 
-	$date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
+
+	
+	$date = '<time class="entry-date" datetime="'.the_modified_time( 'F jS, Y' ).'">'.the_modified_time( 'F jS, Y' ).'</time>';
 
 	$author = sprintf( '<span class="author vcard"><b>%1$s</b></span>',
 		get_the_author()
