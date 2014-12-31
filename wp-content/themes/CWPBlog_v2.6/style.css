@@ -1623,6 +1623,7 @@ footer .fmenu input[type=submit]:hover {
 	width: 100%;
 	padding: 40px 0;
 	border-bottom: 1px solid #C9C9C9;
+	padding-top:20px;
 }
 
 .presentation-shortcode-last {

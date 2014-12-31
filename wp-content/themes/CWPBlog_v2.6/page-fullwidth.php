@@ -20,7 +20,7 @@ get_header(); ?>
 				</div><!--/metadata-->
 				<?php
 					if ($featured_image_url != NULL) {
-						echo '<img class="singleimg" src="'.$featured_image_url.'">';
+					//	echo '<img style="width:100%" class="singleimg" src="'.$featured_image_url.'">';
 					}
 				?>
 
