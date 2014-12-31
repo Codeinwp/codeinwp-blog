@@ -2,7 +2,7 @@
 /*
 Plugin Name: Click To Tweet
 Description: Add click to tweet boxes to your WordPress posts, easily.
-Version: 1.2
+Version: 1.3
 Author: Todaymade
 Author URI: http://coschedule.com/
 Plugin URI: http://coschedule.com/click-to-tweet
@@ -70,7 +70,7 @@ if ( ! class_exists( 'tm_clicktotweet' ) ) {
 		 */
 		public function register_global_hooks() {
 			add_action('wp_enqueue_scripts', array($this, 'add_css'));
-			add_filter('the_content', array($this, 'replace_tags'));
+			add_filter('the_content', array($this, 'replace_tags'), 1);
 		}
 
 		/**
@@ -173,7 +173,7 @@ if ( ! class_exists( 'tm_clicktotweet' ) ) {
 			 	</form>
 
 			 	<hr/>
-			 	<em>A plugin by <a href="http://todaymade.com" target="_blank">Todaymade</a> © 2013</em>
+			 	<em>A plugin by <a href="http://coschedule.com" target="_blank">CoSchedule</a> © 2014</em>
 			</div>
 			<?php
 		}
@@ -228,7 +228,7 @@ if ( ! class_exists( 'tm_clicktotweet' ) ) {
 		    }
 		    $text = $matches[1];
 		    $short = $this->shorten($text, 100);
-		    return "<div class='tm-tweet-clear'></div><div class='tm-click-to-tweet'><div class='tm-ctt-text'><a href='https://twitter.com/share?text=".urlencode($short).$handle_code."&url=".get_permalink()."' target='_blank'>".$short."</a></div><a href='https://twitter.com/share?text=".urlencode($short)."".$handle_code."&url=".get_permalink()."' target='_blank' class='tm-ctt-btn'>Click To Tweet</a><div class='tm-ctt-tip'></div><div class='tm-powered-by'>&nbsp;</div></div>";
+		    return "<div class='tm-tweet-clear'></div><div class='tm-click-to-tweet'><div class='tm-ctt-text'><a href='https://twitter.com/share?text=".urlencode($short).$handle_code."&url=".get_permalink()."' target='_blank'>".$short."</a></div><a href='https://twitter.com/share?text=".urlencode($short)."".$handle_code."&url=".get_permalink()."' target='_blank' class='tm-ctt-btn'>Click To Tweet</a><div class='tm-ctt-tip'></div></div>";
 		}
 
 		/**

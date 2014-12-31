@@ -15,7 +15,7 @@
         },
         getInfo: function() {
             return {
-                longname: "Click To Tweet by Todaymade",
+                longname: "Click To Tweet",
                 author: 'Todaymade',
                 authorurl: 'http://coschedule.com/',
                 infourl: 'http://coschedule.com/click-to-tweet',

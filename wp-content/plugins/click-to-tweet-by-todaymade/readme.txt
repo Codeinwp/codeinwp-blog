@@ -3,8 +3,8 @@ Contributors: todaymade
 Donate link: http://coschedule.com/click-to-tweet
 Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, auto post
 Requires at least: 3.1
-Tested up to: 3.8.2
-Stable tag: 1.2
+Tested up to: 4.0.1
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,9 @@ Find out more here: [http://coschedule.com/click-to-tweet](http://coschedule.com
 4. Click To Tweet box on a sample blog.
 
 == Changelog ==
+
+= 1.3 =
+* Removed powered by link
 
 = 1.2 =
 * Fixed support for php short tags
