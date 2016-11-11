@@ -1,0 +1,198 @@
+{
+  "accelerated-mobile-pages": {
+    "version": "0.8.6.1",
+    "git": "Codeinwp"
+  },
+  "advanced-custom-fields-pro": {
+    "version": "5.4.5",
+    "git": "Codeinwp"
+  },
+  "akismet": {
+    "version": "3.2",
+    "git": "Codeinwp"
+  },
+  "amp": {
+    "version": "0.4.2",
+    "git": "Codeinwp"
+  },
+  "broken-link-checker": {
+    "version": "1.11.2",
+    "git": "Codeinwp"
+  },
+  "cdn-enabler": {
+    "version": "1.0.3",
+    "git": "Codeinwp"
+  },
+  "click-to-tweet-by-todaymade": {
+    "version": "1.3",
+    "git": "Codeinwp"
+  },
+  "code-markup": {
+    "version": "1.3",
+    "git": "Codeinwp"
+  },
+  "contact-form-7": {
+    "version": "4.5",
+    "git": "Codeinwp"
+  },
+  "contact-form-submissions": {
+    "version": "1.4.1",
+    "git": "Codeinwp"
+  },
+  "contextual-related-posts": {
+    "version": "2.2.3",
+    "git": "Codeinwp"
+  },
+  "disable-emojis": {
+    "version": "1.5.2",
+    "git": "Codeinwp"
+  },
+  "disqus-comment-system": {
+    "version": "2.85",
+    "git": "Codeinwp"
+  },
+  "drop-shadow-boxes": {
+    "version": "1.5.5",
+    "git": "Codeinwp"
+  },
+  "dry-preview": {
+    "version": "1.2.0",
+    "git": "Codeinwp"
+  },
+  "easy-content-types": {
+    "version": "2.8.4",
+    "git": "Codeinwp"
+  },
+  "jetpack": {
+    "version": "4.3.1",
+    "git": "Codeinwp"
+  },
+  "ks-giveaways": {
+    "version": "1.4.2",
+    "git": "Codeinwp"
+  },
+  "kraken-image-optimizer": {
+    "version": "2.6.2",
+    "git": "Codeinwp"
+  },
+  "mwp-sharing-jetpack": {
+    "version": "1.5.1",
+    "git": "Codeinwp"
+  },
+  "oembed-gist": {
+    "version": "2.0.4",
+    "git": "Codeinwp"
+  },
+  "optinmonster": {
+    "version": "1.1.5.5",
+    "git": "Codeinwp"
+  },
+  "pastebin-code-snippet-shortcode": {
+    "version": "1.0",
+    "git": "Codeinwp"
+  },
+  "postman-smtp": {
+    "version": "1.7.2",
+    "git": "Codeinwp"
+  },
+  "public-post-preview": {
+    "version": "2.5.0",
+    "git": "Codeinwp"
+  },
+  "quick-pagepost-redirect-plugin": {
+    "version": "5.1.8",
+    "git": "Codeinwp"
+  },
+  "relevanssi": {
+    "version": "3.5.4",
+    "git": "Codeinwp"
+  },
+  "tweet-old-post": {
+    "version": "7.4.6",
+    "git": "Codeinwp"
+  },
+  "revive-old-post-pro-add-on": {
+    "version": "1.8.6",
+    "git": "Codeinwp"
+  },
+  "ricg-responsive-images": {
+    "version": "3.1.1",
+    "git": "Codeinwp"
+  },
+  "dreamgrow-scroll-triggered-box": {
+    "version": "2.3",
+    "git": "Codeinwp"
+  },
+  "shopify-ecommerce-shopping-cart": {
+    "version": "1.1.3",
+    "git": "Codeinwp"
+  },
+  "shortcodes-ultimate": {
+    "version": "4.9.9",
+    "git": "Codeinwp"
+  },
+  "single-post-template": {
+    "version": "1.4.4",
+    "git": "Codeinwp"
+  },
+  "so-css": {
+    "version": "1.0.8",
+    "git": "Codeinwp"
+  },
+  "slack": {
+    "version": "0.5.1",
+    "git": "Codeinwp"
+  },
+  "ssl-insecure-content-fixer": {
+    "version": "2.2.0",
+    "git": "Codeinwp"
+  },
+  "sucuri-scanner": {
+    "version": "1.8.1",
+    "git": "Codeinwp"
+  },
+  "tablepress": {
+    "version": "1.7",
+    "git": "Codeinwp"
+  },
+  "track-everything": {
+    "version": "2.0.1",
+    "git": "Codeinwp"
+  },
+  "typekit-fonts-for-wordpress": {
+    "version": "1.8.2",
+    "git": "Codeinwp"
+  },
+  "vaultpress": {
+    "version": "1.8.5",
+    "git": "Codeinwp"
+  },
+  "visualizer-charts-and-graphs": {
+    "version": "1.1.0",
+    "git": "Codeinwp"
+  },
+  "visualizer": {
+    "version": "1.7.1",
+    "git": "Codeinwp"
+  },
+  "wp-plugin-info-card": {
+    "version": "2.5",
+    "git": "Codeinwp"
+  },
+  "wp-rocket": {
+    "version": "2.8.14",
+    "git": "Codeinwp"
+  },
+  "wp-to-top": {
+    "version": "0.2.1",
+    "git": "Codeinwp"
+  },
+  "wp-pagenavi": {
+    "version": "2.91",
+    "git": "Codeinwp"
+  },
+  "wordpress-seo": {
+    "version": "3.5",
+    "git": "Codeinwp"
+  }
+}
