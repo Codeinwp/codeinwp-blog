@@ -194,5 +194,9 @@
   "wordpress-seo": {
     "ver": "3.5",
     "git": "Codeinwp"
+  },
+  "sumome": {
+    "ver": "1.22",
+    "git": "Codeinwp"
   }
 }
