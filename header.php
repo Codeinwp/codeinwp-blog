@@ -42,7 +42,17 @@
 </script>
 <!-- Load the Content Experiment JavaScript API client for the experiment -->
 <script src="//www.google-analytics.com/cx/api.js?experiment=QjBa1vJcTRmy7wG36Tf_zQ"></script>
-
+<!-- Hotjar Tracking Code for http://codeinwp.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:379722,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
 <!-- Start Visual Website Optimizer Asynchronous Code -->
 <script type='text/javascript'>
 var _vwo_code=(function(){
