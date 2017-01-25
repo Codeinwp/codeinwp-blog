@@ -5103,7 +5103,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .postid-4273 .container{
  border-bottom: 1px dotted grey;
- padding: 0 40px;
+ 
+}
+.postid-4273 #content{
+margin-top: 40px;
 }
 
 .postid-4273 #subheader {
