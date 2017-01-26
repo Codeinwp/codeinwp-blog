@@ -3,8 +3,8 @@
 				    
 				    if (window.location.hash =="#fb" && window.location.href.indexOf('best-wordpress-hosting')>0 )
 				    $("a").each(function(index){
-				        
-				      if ($(this).hasAttr('href') && $(this).attr('href').indexOf('siteground')>0 ) {
+				        var attr = $(this).attr('href');
+				      if (typeof attr !== typeof undefined && attr !== false && attr.indexOf('siteground')>0 ) {
 				          s_atr = $(this).attr('href');
 				          $(this).attr('href','https://www.siteground.com/codeinwp-special?afcode=b1d0f6820e046c19802d21f3b46eb61d&campaign=fb')
 				      }
