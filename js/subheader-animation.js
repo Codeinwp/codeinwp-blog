@@ -1,5 +1,19 @@
 				//Setup aniamtion
 				jQuery(document).ready(function($) {
+				    
+				    if (window.location.hash =="#fb" && window.location.href.indexOf('best-wordpress-hosting')>0 )
+				    $("a").each(function(index){
+				        
+				      if ($(this).hasAttr('href') && $(this).attr('href').indexOf('siteground')>0 ) {
+				          s_atr = $(this).attr('href');
+				          $(this).attr('href',s_atr+'?afcode=b1d0f6820e046c19802d21f3b46eb61d&campaign=fb')
+				      }
+				          
+				          
+				      
+				        
+				    })
+				
 					$(".presentation-shortcode:last").addClass("presentation-shortcode-last");
 
 				    var $grower = $('.dot_one');
