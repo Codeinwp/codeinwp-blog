@@ -6,7 +6,7 @@
 				        
 				      if ($(this).hasAttr('href') && $(this).attr('href').indexOf('siteground')>0 ) {
 				          s_atr = $(this).attr('href');
-				          $(this).attr('href',s_atr+'?afcode=b1d0f6820e046c19802d21f3b46eb61d&campaign=fb')
+				          $(this).attr('href','https://www.siteground.com/codeinwp-special?afcode=b1d0f6820e046c19802d21f3b46eb61d&campaign=fb')
 				      }
 				          
 				          
