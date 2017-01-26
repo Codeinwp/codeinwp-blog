@@ -175,7 +175,7 @@ footer .fmenu li:before,
 }
 
 .subheader h2 {
-  width: 790px;
+  width: auto;
   height: 80px;
   line-height: 80px;
   margin: 0px auto;
