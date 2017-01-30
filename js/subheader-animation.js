@@ -1,5 +1,40 @@
 				//Setup aniamtion
 				jQuery(document).ready(function($) {
+				     if (window.location.href.indexOf('best-wordpress-hosting')>=0 )
+				    $("a").each(function(index){
+				        var attr = $(this).attr('href');
+
+				      if (typeof attr !== typeof undefined && attr !== false ) {
+				          
+				          if (attr.indexOf('siteground')>0 ) 
+				            $(this).attr('href','https://www.siteground.com/codeinwp-special?afcode=b1d0f6820e046c19802d21f3b46eb61d&campaign=bestwphosting');
+				          if (attr.indexOf('inmotionhosting')>0 )
+				            $(this).attr('href','https://secure1.inmotionhosting.com/cgi-bin/gby/clickthru.cgi?id=themeislecode&page=3&campaign=bestwphosting');
+				          
+				      }
+				          
+				          
+				      
+				        
+				    })
+				    if (window.location.hash.indexOf('#')>=0 && window.location.href.indexOf('best-wordpress-hosting')>0 )
+				    $("a").each(function(index){
+				        var attr = $(this).attr('href');
+				         
+				         hash = window.location.hash.substr(1);
+				      if (typeof attr !== typeof undefined && attr !== false ) {
+				          
+				          if (attr.indexOf('siteground')>0 ) 
+				            $(this).attr('href','https://www.siteground.com/codeinwp-special?afcode=b1d0f6820e046c19802d21f3b46eb61d&campaign='+hash);
+				          if (attr.indexOf('inmotionhosting')>0 )
+				            $(this).attr('href','https://secure1.inmotionhosting.com/cgi-bin/gby/clickthru.cgi?id=themeislecode&page=3&campaign='+hash);
+				          
+				      }				      
+				        
+				    })
+				    
+				   
+				
 					$(".presentation-shortcode:last").addClass("presentation-shortcode-last");
 
 				    var $grower = $('.dot_one');

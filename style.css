@@ -5100,3 +5100,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .paging-navigation a {
     color: #EC4646 !important;
 }
+
+.postid-4273 .container{
+ border-bottom: 1px dotted grey;
+ 
+}
+.postid-4273 #content{
+margin-top: 40px;
+}
+
+.postid-4273 #subheader {
+	display:none!important;
+}

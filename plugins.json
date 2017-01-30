@@ -1,10 +1,10 @@
 {
   "accelerated-mobile-pages": {
-    "ver": "0.8.6.1",
+    "ver": "0.9.38",
     "git": "Codeinwp"
   },
   "advanced-custom-fields-pro": {
-    "ver": "5.4.5",
+    "ver": "5.5.5",
     "git": "Codeinwp"
   },
   "akismet": {
@@ -20,7 +20,7 @@
     "git": "Codeinwp"
   },
   "cdn-enabler": {
-    "ver": "1.0.3",
+    "ver": "1.0.4",
     "git": "Codeinwp"
   },
   "click-to-tweet-by-todaymade": {
@@ -32,7 +32,7 @@
     "git": "Codeinwp"
   },
   "contact-form-7": {
-    "ver": "4.5",
+    "ver": "4.6.1",
     "git": "Codeinwp"
   },
   "contact-form-submissions": {
@@ -40,19 +40,19 @@
     "git": "Codeinwp"
   },
   "contextual-related-posts": {
-    "ver": "2.2.3",
+    "ver": "2.3.1",
     "git": "Codeinwp"
   },
   "disable-emojis": {
-    "ver": "1.5.2",
+    "ver": "1.5.3",
     "git": "Codeinwp"
   },
   "disqus-comment-system": {
-    "ver": "2.85",
+    "ver": "2.86",
     "git": "Codeinwp"
   },
   "drop-shadow-boxes": {
-    "ver": "1.5.5",
+    "ver": "1.5.6",
     "git": "Codeinwp"
   },
   "dry-preview": {
@@ -60,11 +60,11 @@
     "git": "Codeinwp"
   },
   "easy-content-types": {
-    "ver": "2.8.4",
+    "ver": "2.8.5",
     "git": "Codeinwp"
   },
   "jetpack": {
-    "ver": "4.3.1",
+    "ver": "4.5",
     "git": "Codeinwp"
   },
   "ks-giveaways": {
@@ -80,16 +80,12 @@
     "git": "Codeinwp"
   },
   "oembed-gist": {
-    "ver": "2.0.4",
+    "ver": "4.7.1",
     "git": "Codeinwp"
   },
   "optinmonster": {
-    "ver": "1.1.5.5",
-    "git": "Codeinwp"
-  },
-  "ModernMediaPasteBinShortcode": {
-    "ver": "1.0",
-    "git": "Codeinwp"
+    "git": "Codeinwp",
+    "ver": "1.1.6.1"
   },
   "postman-smtp": {
     "ver": "1.7.2",
@@ -104,19 +100,15 @@
     "git": "Codeinwp"
   },
   "relevanssi": {
-    "ver": "3.5.4",
+    "ver": "3.5.7.1",
     "git": "Codeinwp"
   },
   "tweet-old-post": {
-    "ver": "7.4.6",
+    "ver": "7.4.7",
     "git": "Codeinwp"
   },
   "tweet-old-post-pro": {
-    "ver": "1.8.6",
-    "git": "Codeinwp"
-  },
-  "ricg-responsive-images": {
-    "ver": "3.1.1",
+    "ver": "1.9.1",
     "git": "Codeinwp"
   },
   "dreamgrow-scroll-triggered-box": {
@@ -124,7 +116,7 @@
     "git": "Codeinwp"
   },
   "shopify-ecommerce-shopping-cart": {
-    "ver": "1.1.3",
+    "ver": "1.1.5",
     "git": "Codeinwp"
   },
   "shortcodes-ultimate": {
@@ -136,19 +128,11 @@
     "git": "Codeinwp"
   },
   "so-css": {
-    "ver": "1.0.8",
-    "git": "Codeinwp"
-  },
-  "slack": {
-    "ver": "0.5.1",
-    "git": "Codeinwp"
-  },
-  "ssl-insecure-content-fixer": {
-    "ver": "2.2.0",
+    "ver": "1.1.2",
     "git": "Codeinwp"
   },
   "sucuri-scanner": {
-    "ver": "1.8.1",
+    "ver": "1.8.3",
     "git": "Codeinwp"
   },
   "tablepress": {
@@ -160,23 +144,23 @@
     "git": "Codeinwp"
   },
   "typekit-fonts-for-wordpress": {
-    "ver": "1.8.2",
+    "ver": "1.8.3",
     "git": "Codeinwp"
   },
   "vaultpress": {
-    "ver": "1.8.5",
+    "ver": "1.8.6",
     "git": "Codeinwp"
   },
   "visualizer-pro": {
-    "ver": "1.1.0",
+    "ver": "1.2.0",
     "git": "Codeinwp"
   },
   "visualizer": {
-    "ver": "1.7.1",
+    "ver": "1.7.6",
     "git": "Codeinwp"
   },
   "wp-plugin-info-card": {
-    "ver": "2.5",
+    "ver": "2.5.1",
     "git": "Codeinwp"
   },
   "wp-rocket": {
@@ -192,11 +176,15 @@
     "git": "Codeinwp"
   },
   "wordpress-seo": {
-    "ver": "3.5",
+    "ver": "4.1",
     "git": "Codeinwp"
   },
   "sumome": {
     "ver": "1.22",
     "git": "Codeinwp"
+  },
+  "header-footer": {
+    "git": "Codeinwp",
+    "ver": "2.0.3"
   }
 }
