@@ -186,5 +186,9 @@
   "header-footer": {
     "git": "Codeinwp",
     "ver": "2.0.3"
+  },
+  "ssl-insecure-content-fixer": {
+    "git": "Codeinwp",
+    "ver": "2.2.2"
   }
 }
