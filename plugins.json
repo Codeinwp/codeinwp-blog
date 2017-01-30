@@ -60,7 +60,7 @@
     "git": "Codeinwp"
   },
   "easy-content-types": {
-    "ver": "2.8.4",
+    "ver": "2.8.5",
     "git": "Codeinwp"
   },
   "jetpack": {
@@ -84,8 +84,8 @@
     "git": "Codeinwp"
   },
   "optinmonster": {
-    "ver": "1.1.5.6",
-    "git": "Codeinwp"
+    "git": "Codeinwp",
+    "ver": "1.1.6.1"
   },
   "ModernMediaPasteBinShortcode": {
     "ver": "1.0",
@@ -192,11 +192,15 @@
     "git": "Codeinwp"
   },
   "wordpress-seo": {
-    "ver": "3.7",
+    "ver": "4.1",
     "git": "Codeinwp"
   },
   "sumome": {
     "ver": "1.22",
     "git": "Codeinwp"
+  },
+  "header-footer": {
+    "git": "Codeinwp",
+    "ver": "2.0.3"
   }
 }
