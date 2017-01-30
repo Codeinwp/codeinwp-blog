@@ -1,4 +1,9 @@
 
+### 2.6.2 - 30/01/2017
+**Changes:** 
+- Updated all plugins
+- Added missing plugins
+
 ### 2.6.2 - 16/11/2016
 **Changes:** 
 - Added sumo me plugin
