@@ -118,53 +118,8 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
   }, 10000);
 })('00');
 </script>
-<script type='text/javascript' src="<?php echo get_template_directory_uri() .'/js/toastr.min.js?ver=20120206';?>"></script>
 
 <script>
-  // Ask Google Analytics which variation to show the user.
-  var chosenVariation = cxApi.chooseVariation();
-var pageVariations = [
-  function() {},  // Original: Do nothing. This will render the default HTML.
-  function() {    // Variation 1: Banner Image
-  var k=0;
-jQuery("a").each(function(){
-   
-    if (jQuery(this).attr("href").indexOf("zerif-lite")>0) k=1;
-})
-       if ((typeof toastr !== 'undefined')&&k==1) {
-          toastr.options = {
-  "closeButton": false,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-bottom-left",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": "1000",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-setTimeout(
-  function() 
-  {
-    toastr.info('All listed themes are manually tested by us.');
-  }, 3000);
-        
-    }
-  }
-];
-
-// Wait for the DOM to load, then execute the view for the chosen variation.
-jQuery(document).ready(
-  // Execute the chosen view
-  pageVariations[chosenVariation]
-);
-console.log(chosenVariation);
 
 
 
