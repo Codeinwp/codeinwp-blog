@@ -20,6 +20,7 @@
 	<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="referrer" content="origin">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/cwpfavicon.png">
 	<link rel='stylesheet' id='toastrcss-css'  href="<?php echo get_template_directory_uri() .'/css/toastr.min.css';?>" type='text/css' media='all' />
