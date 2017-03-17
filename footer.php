@@ -162,6 +162,21 @@ jQuery(document).ready(function($) {
           elEv.loc = href;
         }
         else track = false;
+              // set cookie for external clicks
+        
+        function createCookie(name,value,days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+        
+        createCookie('externalclick','yes',7);
+        
+        //track fb event for external clicks
         window._fbq.push(['track', 'ViewContent', {type:'external'}]);
       }
     })
