@@ -34,7 +34,7 @@
     jQuery(document).ready(function($) {
     	//Setup parallax
     	var scene = document.getElementById('subheader');
-    	var parallax = new Parallax(scene);
+    	if (Parallax) var parallax = new Parallax(scene);
     });
 	</script>
 	<?php wp_footer(); ?>
@@ -118,7 +118,6 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
   }, 10000);
 })('00');
 </script>
-
 <script>
 
 
@@ -162,7 +161,7 @@ jQuery(document).ready(function($) {
           elEv.loc = href;
         }
         else track = false;
-              // set cookie for external clicks
+        // set cookie for external clicks
         
         function createCookie(name,value,days) {
             var expires = "";
