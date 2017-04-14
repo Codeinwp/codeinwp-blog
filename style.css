@@ -528,7 +528,7 @@ footer .fmenu li:before,
 /* Karol K */
 .img-theme-post {
     background: url(https://www.codeinwp.com/blog/wp-content/uploads/2015/02/browser-top-bg.png) no-repeat;
-	background-position: top center; 
+	background-position: top center;
 	padding: 15px 0 0 0;
     -webkit-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
@@ -806,7 +806,7 @@ border: 0px solid #000000;
 	border-left: 10px solid #eee;
 }*/
 
-.entry-content pre { 
+.entry-content pre {
 	font-family: "Consolas", Courier, monospace, sans-serif;
 	font-size: 14px;
 	text-align: left;
@@ -814,22 +814,22 @@ border: 0px solid #000000;
 	padding-left: 0.7em;
 	border-left: 8px solid #ccc;
 	margin: 1.7em 0 1.7em 1.7em;
-	overflow: auto; 
-	width: 90%; 
+	overflow: auto;
+	width: 90%;
 }
 
-.entry-content code { 
-	border: solid 1px #e4e4e4; 
-	border-radius: 3px; 
+.entry-content code {
+	border: solid 1px #e4e4e4;
+	border-radius: 3px;
 	padding: 4px 4px 1px;
-	background: #f5f7f8; 
+	background: #f5f7f8;
 	font-size: 14px;
 	color: #444;
 }
 
 .entry-content pre code {
 	border: 0px;
-	background: none; 
+	background: none;
 }
 
 .entry-content .page-links {
@@ -1842,8 +1842,8 @@ footer .fmenu input[type=submit]:hover {
 @media only screen and (max-width: 480px) {
 
     #content .post h3 a, #content .page h3 a {
-     
-        font-size:30px!important;   
+
+        font-size:30px!important;
     }
 	.socialmedia {
 	   display:none!important;
@@ -1875,7 +1875,7 @@ footer .fmenu input[type=submit]:hover {
 	}
 }
 @media only screen and (max-width: 768px) {
-    
+
 
 
     .entry-content img {
@@ -5103,7 +5103,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .postid-4273 .container{
  border-bottom: 1px dotted grey;
- 
+
 }
 .postid-4273 #content{
 margin-top: 40px;
@@ -5111,4 +5111,40 @@ margin-top: 40px;
 
 .postid-4273 #subheader {
 	display:none!important;
+}
+.img-theme-post-new {
+    background: url(https://codeinwpblo-vertigostudio.netdna-ssl.com/wp-content/uploads/2017/04/browser-top-bg-thin-long.png) no-repeat;
+    background-position: top center;
+    padding: 15px 0 0 0;
+    -webkit-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border-radius: 8px 8px 8px 8px;
+    border: 0px solid #000000;
+}
+.img-theme-post-new2 {
+    background: url(https://codeinwpblo-vertigostudio.netdna-ssl.com/wp-content/uploads/2017/04/browser-top-bg-short.png) no-repeat;
+    background-position: top center;
+    padding: 15px 0 0 0;
+    -webkit-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+    -moz-border-radius: 8px 8px 4px 4px;
+    -webkit-border-radius: 8px 8px 4px 4px;
+    border-radius: 8px 8px 4px 4px;
+    border: 0px solid #000000;
+}
+.img-theme-post-new3 {
+    background: url(https://codeinwpblo-vertigostudio.netdna-ssl.com/wp-content/uploads/2017/04/browser-top-bg-mobile.png) no-repeat;
+    background-position: top center;
+    padding: 15px 0 0 0;
+    -webkit-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+    -moz-border-radius: 8px 8px 4px 4px;
+    -webkit-border-radius: 8px 8px 4px 4px;
+    border-radius: 8px 8px 4px 4px;
+    border: 0px solid #000000;
 }
