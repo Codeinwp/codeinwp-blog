@@ -88,22 +88,6 @@ twttr.conversion.trackPid('l56rq');</script>
 <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l56rq&p_id=Twitter" />
 <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l56rq&p_id=Twitter" /></noscript>
  
-<script>(function() {
-  var _fbq = window._fbq || (window._fbq = []);
-  if (!_fbq.loaded) {
-    var fbds = document.createElement('script');
-    fbds.async = true;
-    fbds.src = '//connect.facebook.net/en_US/fbds.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(fbds, s);
-    _fbq.loaded = true;
-  }
-  _fbq.push(['addPixelId', '704894032915584']);
-})();
-window._fbq = window._fbq || [];
-window._fbq.push(['track', 'PixelInitialized', {}]);
-</script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=704894032915584&amp;ev=NoScript" /></noscript>
 <script type="text/javascript">
 (function (tos) {
   window.setInterval(function () {
