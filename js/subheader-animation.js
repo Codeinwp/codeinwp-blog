@@ -1,6 +1,6 @@
 				//Setup aniamtion
 				jQuery(document).ready(function($) {
-				     
+				  
 				    if (window.location.hash.indexOf('#')>=0 && window.location.href.indexOf('best-wordpress-hosting')>0 )
 				    $("a").each(function(index){
 				        var attr = $(this).attr('href');
@@ -11,7 +11,7 @@
 				          if (attr.indexOf('siteground')>0 ) 
 				            $(this).attr('href','https://www.siteground.com/codeinwp-special?afcode=b1d0f6820e046c19802d21f3b46eb61d&campaign='+hash);
 				          if (attr.indexOf('inmotionhosting')>0 )
-				            $(this).attr('href','https://secure1.inmotionhosting.com/cgi-bin/gby/clickthru.cgi?id=themeislecode&page=3&campaign='+hash);
+				            $(this).attr('href','https://inmotion-hosting.evyy.net/c/150866/260033/4222?u=http%3A%2F%2Fwww.inmotionhosting.com%2Fwordpress-hosting&subId1='+hash);
 				          
 				      }				      
 				        
