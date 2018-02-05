@@ -151,7 +151,7 @@ if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
 			get_the_author()
 		);
 
-		// Translators: 1 is category, 2 is the date and 3 is the author's name.
+		// Translators: 1 is category, 2 is the date and 3 is the author's name, 4 is the last updated date.
 		if ( $categories_list ) {
 			$utility_text = __( '<div class="author-publish-date"><span class="by-author"> %3$s</span> - %2$s</div><div class="last-updated">Last Updated: %4$s</div> Posted in %1$s', 'cwp' );
 		} else {
