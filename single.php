@@ -25,7 +25,7 @@ get_header(); ?>
     </div></div>
 				<h1 class="singletitle" class="single-post-title entry-title" itemprop="headline"><?php the_title(); ?></h1>
 				<div class="metadata">
-					<?php cwp_entry_meta(); ?>
+					<?php cwp_entry_meta_with_gravatar(); ?>
 					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
 				</div><!--/metadata-->
 				<?php

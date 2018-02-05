@@ -583,6 +583,43 @@ border: 0px solid #000000;
 	font-size: 18px;
 }
 
+/* Blog and Archive page, post author image */
+.blog #content .metadata .author-with-img,
+.archive #content .metadata .author-with-img {
+	display: inline-block;
+}
+.blog #content .metadata .author-with-img img,
+.archive #content .metadata .author-with-img img {
+	border-radius: 50%;
+	-webkit-transform: translateY(30%);
+	-moz-transform: translateY(30%);
+	-ms-transform: translateY(30%);
+	-o-transform: translateY(30%);
+	transform: translateY(30%);
+}
+
+/* Single post page, post author image, publish date, last updated date */
+.single-post #content .metadata {
+	position: relative;
+	padding-top: 10px;
+}
+.single-post #content .metadata .avatar {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.single-post #content .metadata .author-publish-date {
+	margin-left: 50px;
+	margin-bottom: 35px;
+}
+.single-post #content .metadata .last-updated {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
 #content .metadata a {
 	font-weight: 700;
 	color: #ec4646;

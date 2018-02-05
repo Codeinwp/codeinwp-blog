@@ -122,6 +122,55 @@ function cwp_entry_meta($is_date=true) {
 }
 endif;
 
+if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
+	/*
+	 * Set up post entry meta for single post page
+	 *
+	 * post author gravatar
+	 * publish date
+	 * last updated date
+	 */
+	function cwp_entry_meta_with_gravatar($is_date=true) {
+		// Translators: used between list items, there is a space after the comma.
+		$categories_list = get_the_category_list( __( ', ', 'cwp' ) );
+
+		// Translators: used between list items, there is a space after the comma.
+		$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
+
+		$m_time = get_the_modified_time( 'F jS, Y' );
+		$m_time_g = get_the_modified_time('Y-m-j');
+		$p_time = get_the_time( 'F jS, Y' );
+		$p_time_g = get_the_time('Y-m-j');
+
+		if ($is_date)
+			$date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
+		else
+			$date = '';
+
+		$author = sprintf( '<span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><span class="author vcard" itemprop="name"><b>%1$s</b></span></span>',
+			get_the_author()
+		);
+
+		// Translators: 1 is category, 2 is the date and 3 is the author's name.
+		if ( $categories_list ) {
+			$utility_text = __( '<div class="author-publish-date"><span class="by-author"> %3$s</span> - %2$s</div><div class="last-updated">Last Updated: %4$s</div> Posted in %1$s', 'cwp' );
+		} else {
+			$utility_text = __( '<div class="author-publish-date"><span class="by-author"> %3$s</span> - %2$s</div><div class="last-updated">Last Updated: %4$s</div>', 'cwp' );
+		}
+
+		$author_email = get_the_author_meta( 'user_email' );
+		echo get_avatar( $author_email, 40 );
+
+		printf(
+			$utility_text,
+			$categories_list,
+			$date,
+			$author,
+			$m_time
+		);
+	}
+endif;
+
 if ( ! function_exists( 'cwp_entry_meta_release' ) ) :
 /*
  * Set up post entry meta.
@@ -144,16 +193,19 @@ function cwp_entry_meta_release() {
 
 	// Translators: 1 is category, 2 is the date and 3 is the author's name.
 	if ( $categories_list ) {
-		$utility_text = __( ' %2$s • in %1$s<span class="by-author"> • by %3$s</span>', 'cwp' );
+		$utility_text = __( ' %2$s • in %1$s<span class="by-author"> • <div class="author-with-img">%4$s</div> %3$s</span>', 'cwp' );
 	} else {
-		$utility_text = __( ' %2$s<span class="by-author"> • by %3$s</span>', 'cwp' );
+		$utility_text = __( ' %2$s<span class="by-author"> • <div class="author-with-img">%4$s</div> %3$s</span>', 'cwp' );
 	}
 
+	$author_email = get_the_author_meta( 'user_email' );
+	$author_avatar = get_avatar( $author_email, 40 );
 	printf(
 		$utility_text,
 		$categories_list,
 		$date,
-		$author
+		$author,
+		$author_avatar
 	);
 }
 endif;
