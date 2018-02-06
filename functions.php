@@ -143,7 +143,7 @@ if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
 		$p_time_g = get_the_time('Y-m-j');
 
 		if ($is_date)
-			$date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
+			$date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$p_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
 		else
 			$date = '';
 
