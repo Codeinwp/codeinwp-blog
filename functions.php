@@ -390,7 +390,7 @@ function cwp_display_current_post_title() {
     $current_post_title = single_post_title( '',false );
 
     printf(
-        '<h1 class="single-post-title">%1$s</h1>',
+        '<h1 class="single-post-title entry-title" itemprop="headline">%1$s</h1>',
 	    $current_post_title
     );
 
