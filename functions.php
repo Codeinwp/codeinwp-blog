@@ -168,7 +168,7 @@ if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
 		$p_time_g = get_the_time('Y-m-j');
 
 		if ($is_date)
-			$date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$p_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
+			$date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
 		else
 			$date = '';
 
@@ -183,9 +183,9 @@ if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
 
 		// Translators: 1 is category, 2 is the date and 3 is the author's name, 4 is the last updated date, 5 is the number of comments for the post.
 		if ( $categories_list ) {
-			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> - %5$s</span>', 'cwp' );
+			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
 		} else {
-			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div> %3$s</span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> - %5$s</span>', 'cwp' );
+			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
 		}
 
 		printf(
@@ -218,9 +218,9 @@ function cwp_entry_meta_release() {
 
 	// Translators: 1 is category, 2 is the date, 3 is the author's name, 4 is the author's image, 5 is the number of comments for the post.s
 	if ( $categories_list ) {
-		$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> - %5$s</span>', 'cwp' );
+		$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
 	} else {
-		$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div> %3$s</span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> - %5$s</span>', 'cwp' );
+		$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
 	}
 
 	printf(

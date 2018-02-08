@@ -621,6 +621,8 @@ border: 0px solid #000000;
 }
 #content .metadata .number-of-comments {
 	font-weight: inherit;
+	float: right;
+	margin-top: 18px;
 }
 
 #content .metadata a {
@@ -2010,6 +2012,13 @@ footer .fmenu input[type=submit]:hover {
 		height: 56px;
 		-webkit-appearance: none;
     	border-radius: 0;
+	}
+	
+	#content .metadata .number-of-comments {
+		float: none;
+	}
+	#content .metadata .number-of-comments:before {
+		content: " - ";
 	}
 
 	#sidebar,
