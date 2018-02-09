@@ -5,31 +5,31 @@
  * @package CWP
  */
 get_header(); ?>
-    	<main id="content" role="main">
-            <div class="archive-navigation">
-                <?php
-                    if ( is_category() ) {
-                        echo 'Category: ';
-                        single_cat_title();
-                    }
-                    if ( is_author() ) {
-                        echo 'Author: ';
-                        the_author();
-                    }
-                    if ( is_tag() ) {
-                        echo 'Tags: ';
-                        the_tags();
-                    }
-                    if ( is_day() ) :
-    					printf( __( 'Daily Archives: %s', 'wwbw' ), get_the_date() );
+		<main id="content" role="main">
+			<div class="archive-navigation">
+				<?php
+					if ( is_category() ) {
+						echo 'Category: ';
+						single_cat_title();
+					}
+					if ( is_author() ) {
+						echo 'Author: ';
+						the_author();
+					}
+					if ( is_tag() ) {
+						echo 'Tags: ';
+						the_tags();
+					}
+					if ( is_day() ) :
+						printf( __( 'Daily Archives: %s', 'wwbw' ), get_the_date() );
 					elseif ( is_month() ) :
 						printf( __( 'Monthly Archives: %s', 'wwbw' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'wwbw' ) ) );
 					elseif ( is_year() ) :
 						printf( __( 'Yearly Archives: %s', 'wwbw' ), get_the_date( _x( 'Y', 'yearly archives date format', 'wwbw' ) ) );
 					endif;
-                ?>
-            </div><!--/div .archive-navigation-->
-		    <?php if ( have_posts() ) : ?>
+				?>
+			</div><!--/div .archive-navigation-->
+			<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -42,7 +42,6 @@ get_header(); ?>
 				<?php endif; // is_single() ?>
 				<div class="metadata">
 					<?php cwp_entry_meta_release(); ?>
-					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
 				</div><!--/metadata-->
 				<?php
 					$get_permalink = get_permalink();
@@ -50,11 +49,11 @@ get_header(); ?>
 						echo '<a href="' . $get_permalink . '" class="image"><img src="' . $featured_image_url . '" /></a>';
 					}
 				?>
-                 <a class="button_pinterest" href="http://www.pinterest.com/pin/create/button/
-                        ?url=<?php the_permalink(); ?>
-                        &media=<?php echo $featured_image_url; ?>
-                        &description=<?php the_title(); ?>" data-pin-do="buttonPin" data-pin-shape="round" data-pin-height="32">
-                <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" /></a>
+				 <a class="button_pinterest" href="http://www.pinterest.com/pin/create/button/
+						?url=<?php the_permalink(); ?>
+						&media=<?php echo $featured_image_url; ?>
+						&description=<?php the_title(); ?>" data-pin-do="buttonPin" data-pin-shape="round" data-pin-height="32">
+				<img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" /></a>
 				<?php if ( is_single() ) : ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
@@ -70,7 +69,7 @@ get_header(); ?>
 				<?php endif; // is_single() ?>
 			</div><!--/post-->
 			<?php endwhile; ?>
-        <?php codeinwpblog_paging_nav(); ?>
+		<?php codeinwpblog_paging_nav(); ?>
 		<?php else : ?>
 
 			<div id="post-0" class="post no-results not-found">

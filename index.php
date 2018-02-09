@@ -15,13 +15,12 @@ get_header(); ?>
 				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<div class="metadata">
 					<?php cwp_entry_meta_release(); ?>
-					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
 				</div><!--/metadata-->
 				<?php
-    				$get_permalink = get_permalink();
+					$get_permalink = get_permalink();
 					if ($featured_image_url != NULL) : ?>
 						<?php echo '<a href="' . $get_permalink . '" class="image"><img src="' . $featured_image_url . '" /></a>'; ?>
-					     
+
 				<?php endif; ?>
 
 				<div class="excerpt">
@@ -33,7 +32,7 @@ get_header(); ?>
 			<?php cwp_kriesi_pagination(); ?>
 
 		<?php else : ?>
-		    <?php _e( 'No posts to display', 'cwp' ); ?>
+			<?php _e( 'No posts to display', 'cwp' ); ?>
 		<?php endif; // end have_posts() check ?>
 		</main><!--/content-->
 <?php get_sidebar(); ?>

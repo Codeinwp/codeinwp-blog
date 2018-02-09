@@ -4,7 +4,7 @@
 	Author: Codeinwp
 	Author URI: http://www.codeinwp.com
 	Description: Codeinwp Blog Theme v2.6
-	Version: 2.6.2
+	Version: 2.6.3
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -581,6 +581,48 @@ border: 0px solid #000000;
 	margin-bottom: 36px;
 	color: #757575;
 	font-size: 18px;
+}
+
+/* Single post page, header title */
+.single-post .single-post-title {
+	color: #fff;
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgb( 24, 102, 126 );
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 100;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/* Post Author Image */
+.metadata {
+	line-height: 30px;
+}
+.metadata .by-author .author-with-img {
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+}
+.metadata .by-author .author-with-img .avatar {
+	border-radius: 50%;
+	-webkit-transform: translateY(30%);
+	-moz-transform: translateY(30%);
+	-ms-transform: translateY(30%);
+	-o-transform: translateY(30%);
+	transform: translateY(30%);
+}
+#content .metadata .number-of-comments {
+	font-weight: inherit;
+	float: right;
+	margin-top: 18px;
 }
 
 #content .metadata a {
@@ -1970,6 +2012,13 @@ footer .fmenu input[type=submit]:hover {
 		height: 56px;
 		-webkit-appearance: none;
     	border-radius: 0;
+	}
+	
+	#content .metadata .number-of-comments {
+		float: none;
+	}
+	#content .metadata .number-of-comments:before {
+		content: " - ";
 	}
 
 	#sidebar,
