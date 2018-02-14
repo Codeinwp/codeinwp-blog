@@ -9,7 +9,7 @@ get_header(); ?>
             <div class="archive-navigation">
                 <?php
                     if ( is_category() ) {
-                        
+
                         single_cat_title();
                     }
                     if ( is_author() ) {
@@ -42,7 +42,6 @@ get_header(); ?>
 				<?php endif; // is_single() ?>
 				<div class="metadata">
 					<?php cwp_entry_meta_release(); ?>
-					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
 				</div><!--/metadata-->
 				<?php
 					$get_permalink = get_permalink();
@@ -50,7 +49,7 @@ get_header(); ?>
 						echo '<a href="' . $get_permalink . '" class="image"><img src="' . $featured_image_url . '" /></a>';
 					}
 				?>
-                
+
 				<?php if ( is_single() ) : ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
@@ -99,6 +98,6 @@ get_header(); ?>
 
 		<?php endif; // end have_posts() check ?>
 		</main><!--/content-->
-		
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

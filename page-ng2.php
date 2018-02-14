@@ -10,7 +10,7 @@
 	<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ngstyle.css">
 	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-	
+
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>

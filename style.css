@@ -4,7 +4,7 @@
 	Author: Codeinwp
 	Author URI: http://www.codeinwp.com
 	Description: Codeinwp Blog Theme v2.6
-	Version: 2.6.2
+	Version: 2.6.3
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -34,7 +34,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-
+body {
+	line-height: 1;
+}
 ol, ul {
 	list-style: none;
 }
@@ -73,11 +75,11 @@ input:focus {
 .cf {
     *zoom: 1;
 }
-html { overflow-x: hidden; } 
+html { overflow-x: hidden; }
 body {
 	font-size: 14px;
 	color: #757575;
-    font-family: "proxima-nova",sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 #headernav li a,
@@ -541,7 +543,7 @@ border: 0px solid #000000;
 
 .img-theme-post-new {
     background: url(https://www.codeinwp.com/blog/wp-content/uploads/2017/04/browser-top-bg-thin-long.png) no-repeat;
-	background-position: top center; 
+	background-position: top center;
 	padding: 15px 0 0 0;
     -webkit-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
@@ -554,7 +556,7 @@ border: 0px solid #000000;
 
 .img-theme-post-new2 {
     background: url(https://www.codeinwp.com/blog/wp-content/uploads/2017/04/browser-top-bg-short.png) no-repeat;
-	background-position: top center; 
+	background-position: top center;
 	padding: 15px 0 0 0;
     -webkit-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
@@ -567,7 +569,7 @@ border: 0px solid #000000;
 
 .img-theme-post-new3 {
     background: url(https://www.codeinwp.com/blog/wp-content/uploads/2017/04/browser-top-bg-mobile.png) no-repeat;
-	background-position: top center; 
+	background-position: top center;
 	padding: 15px 0 0 0;
     -webkit-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
@@ -620,6 +622,48 @@ border: 0px solid #000000;
 	margin-bottom: 36px;
 	color: #757575;
 	font-size: 16px;
+}
+
+/* Single post page, header title */
+.single-post .single-post-title {
+	color: #fff;
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgb( 24, 102, 126 );
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 100;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/* Post Author Image - added author image. */
+.metadata {
+	line-height: 30px;
+}
+.metadata .by-author .author-with-img {
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+}
+.metadata .by-author .author-with-img .avatar {
+	border-radius: 50%;
+	-webkit-transform: translateY(30%);
+	-moz-transform: translateY(30%);
+	-ms-transform: translateY(30%);
+	-o-transform: translateY(30%);
+	transform: translateY(30%);
+}
+#content .metadata .number-of-comments {
+	font-weight: inherit;
+	float: right;
+	margin-top: 18px;
 }
 
 #content .metadata a {
@@ -1395,7 +1439,7 @@ footer .fmenu li {
 
 footer .fmenu li a {
 	padding: 10px 0;
-	
+
 	display: block;
 }
 
@@ -1885,7 +1929,7 @@ footer .fmenu input[type=submit]:hover {
 
     #content .post h3 a, #content .page h3 a {
      
-        font-size:20px!important;   
+        font-size:20px!important;
     }
 	.socialmedia {
 	   display:none!important;
@@ -2012,6 +2056,13 @@ footer .fmenu input[type=submit]:hover {
 		height: 56px;
 		-webkit-appearance: none;
     	border-radius: 0;
+	}
+
+	#content .metadata .number-of-comments {
+		float: none;
+	}
+	#content .metadata .number-of-comments:before {
+		content: " - ";
 	}
 
 	#sidebar,
