@@ -16,13 +16,9 @@ require_once ( 'inc/metaboxes/custom-metaboxes.php' ); // Custom Metaboxes
  */
 function cwp_theme_name_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '2.8' );
-	wp_enqueue_style( 'font-family-source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' );
-	wp_enqueue_style( 'font-family-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300' );
-    wp_enqueue_style( 'font-family-lato', '//fonts.googleapis.com/css?family=Lato:400,700' );
-	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'subheader-animation', get_template_directory_uri() . '/js/subheader-animation.js', array('jquery'), '1', true );
+
+	wp_enqueue_script( 'subheader-animation', get_template_directory_uri() . '/js/subheader-animation.js', array('jquery'), '11', true );
     wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1', true );
-    wp_enqueue_script( 'pint', '//assets.pinterest.com/js/pinit.js', array('jquery'), '1', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'cwp_theme_name_scripts' );
@@ -48,6 +44,19 @@ if ( ! isset( $content_width ) )
  * Register sidebars.
  */
  function cwp_widgets_init() {
+     
+
+    register_sidebar( array(
+        'name' => __( 'Home Sidebar', 'cwp' ),
+        'id' => 'sidebar-4',
+        'class'         => 'elementor-sidebar',
+        'description' => __( 'Widgets in this area will be shown on Home.', 'theme-slug' ),
+        'before_widget' => '<div id="%1$s" class="widgetelem %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h2 class="widget-title">',
+	'after_title'   => '</h2>',
+    ) );
+
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'cwp' ),
 		'id' => 'sidebar-1',
@@ -97,8 +106,8 @@ function cwp_entry_meta($is_date=true) {
     $m_time_g = get_the_modified_time('Y-m-j');
     $p_time = get_the_time( 'F jS, Y' );
     $p_time_g = get_the_time('Y-m-j');
-    if ($is_date)
-	    $date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
+    if ($is_date && (time()-(60*60*24*120)) < strtotime($m_time_g))
+	    $date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'.$p_time_g.'">';
 	else
 	    $date = '';
 
@@ -135,8 +144,9 @@ function cwp_entry_meta_release() {
 
 
 
-
-	$date = '<time class="entry-date">'.the_time( 'F jS, Y' ).'</time>';
+   
+	    $date = '<time class="entry-date">'.the_time( 'F jS, Y' ).'</time>';
+	   
 
 	$author = sprintf( '<span class="author vcard"><b>%1$s</b></span>',
 		get_the_author()
