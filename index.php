@@ -17,9 +17,10 @@ get_header(); ?>
 					<?php cwp_entry_meta_release(); ?>
 				</div><!--/metadata-->
 				<?php
-					$get_permalink = get_permalink();
-					if ($featured_image_url != NULL) : ?>
-						<?php echo '<a href="' . $get_permalink . '" class="image"><img src="' . $featured_image_url . '" /></a>'; ?>
+    				$get_permalink = get_permalink();
+    				$title = get_the_title();
+    				if ($featured_image_url != NULL) : ?>
+						<?php echo '<a href="' . $get_permalink . '" class="image" title="'.$title.'"><img src="' . $featured_image_url . '" alt="'.$title.' featured image"/></a>'; ?>
 
 				<?php endif; ?>
 
@@ -32,8 +33,12 @@ get_header(); ?>
 			<?php cwp_kriesi_pagination(); ?>
 
 		<?php else : ?>
-			<?php _e( 'No posts to display', 'cwp' ); ?>
-		<?php endif; // end have_posts() check ?>
-		</main><!--/content-->
+		    <?php _e( 'No posts to display', 'cwp' ); ?>
+		<?php endif; // end have_posts() check
+		?>
+
+		</main> <!--/content-->
+
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
