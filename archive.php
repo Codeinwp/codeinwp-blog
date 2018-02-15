@@ -42,7 +42,6 @@ get_header(); ?>
 				<?php endif; // is_single() ?>
 				<div class="metadata">
 					<?php cwp_entry_meta_release(); ?>
-					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
 				</div><!--/metadata-->
 				<?php
 					$get_permalink = get_permalink();
