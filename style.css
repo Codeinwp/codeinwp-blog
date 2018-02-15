@@ -249,6 +249,11 @@ footer .fmenu li:before,
 	background-image: url(images/morning_bg.jpg);
 }
 
+#subheader .entry-title.container {
+	position: absolute;
+	height: auto;
+}
+
 #subheader .container {
 	position: relative;
 	height: 240px;
@@ -1960,8 +1965,11 @@ footer .fmenu input[type=submit]:hover {
 	}
 }
 @media only screen and (max-width: 768px) {
-    
 
+	#subheader .entry-title {
+		font-size: 25px;
+		line-height: 1.6;
+	}
 
     .entry-content img {
         max-width: 100%;
