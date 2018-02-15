@@ -140,7 +140,9 @@ function cwp_post_number_of_comments() {
 	$comments_number = get_comments_number();
 	if ( 1 === (int)$comments_number ) {
 		return sprintf( _x( 'One Comment', 'comments title', 'cwp' ) );
-	} else {
+	} else if ( 0 === (int)$comments_number ) {
+		return sprintf( _x( 'No Comments', 'comments title', 'cwp' ) );
+    } else {
 		return sprintf(
 			_nx(
 				'%1$s Comment',
