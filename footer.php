@@ -20,8 +20,7 @@
 					<div class="email">Email us<br /><span><?php echo get_theme_mod('cwp_footer_email'); ?></span></div>
 				</div><!--/contact-->
 			<div class="copyright">
-					© 2018 codeinwp.com. All Rights Reserved. <br />
-					WordPress logo is Copyright © WordPress.com
+                <?php cwp_display_copyright(); ?>
 				</div><!--/copyright-->
 			</div><!--/aboutus-->
     		<?php
