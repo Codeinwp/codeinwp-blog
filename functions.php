@@ -418,5 +418,14 @@ function cwp_display_current_post_title() {
 }
 add_action( 'cwp_single_post_header', 'cwp_display_current_post_title' );
 
+function cwp_display_copyright() {
+
+    $current_year = date('Y');
+
+    printf(
+        '© %1$s codeinwp.com. All Rights Reserved. <br />WordPress logo is Copyright © WordPress.com',
+	    $current_year
+        );
+}
 
 ?>
