@@ -89,48 +89,6 @@ if ( ! isset( $content_width ) )
 }
 add_action( 'widgets_init', 'cwp_widgets_init' );
 
-
-if ( ! function_exists( 'cwp_entry_meta' ) ) :
-/*
- * Set up post entry meta.
- */
-function cwp_entry_meta($is_date=true) {
-	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'cwp' ) );
-
-	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
-
-
-    $m_time = get_the_modified_time( 'F jS, Y' );
-    $m_time_g = get_the_modified_time('Y-m-j');
-    $p_time = get_the_time( 'F jS, Y' );
-    $p_time_g = get_the_time('Y-m-j');
-    if ($is_date && (time()-(60*60*24*120)) < strtotime($m_time_g))
-	    $date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'.$p_time_g.'">';
-	else
-	    $date = '';
-
-	$author = sprintf( '<span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><span class="author vcard" itemprop="name"><b>%1$s</b></span></span>',
-		get_the_author()
-	);
-
-	// Translators: 1 is category, 2 is the date and 3 is the author's name.
-	if ( $categories_list ) {
-		$utility_text = __( ' %2$s • in %1$s<span class="by-author"> • by %3$s</span>', 'cwp' );
-	} else {
-		$utility_text = __( ' %2$s<span class="by-author"> • by %3$s</span>', 'cwp' );
-	}
-
-	printf(
-		$utility_text,
-		$categories_list,
-		$date,
-		$author
-	);
-}
-endif;
-
 /**
  * Get the number of comments for a post
  *
@@ -142,7 +100,7 @@ function cwp_post_number_of_comments() {
 		return sprintf( _x( 'One Comment', 'comments title', 'cwp' ) );
 	} else if ( 0 === (int)$comments_number ) {
 		return sprintf( _x( 'No Comments', 'comments title', 'cwp' ) );
-    } else {
+	} else {
 		return sprintf(
 			_nx(
 				'%1$s Comment',
@@ -156,80 +114,64 @@ function cwp_post_number_of_comments() {
 	}
 }
 
-if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
-	/*
-	 * Set up post entry meta for single post page
-	 *
-	 * post author gravatar
-	 * publish date
-	 * last updated date
-	 */
-	function cwp_entry_meta_with_gravatar($is_date=true) {
-		// Translators: used between list items, there is a space after the comma.
-		$categories_list = get_the_category_list( __( ', ', 'cwp' ) );
-		// Translators: used between list items, there is a space after the comma.
-		$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
-		$m_time = get_the_modified_time( 'F jS, Y' );
-		$m_time_g = get_the_modified_time('Y-m-j');
-		$p_time = get_the_time( 'F jS, Y' );
-		$p_time_g = get_the_time('Y-m-j');
-		if ($is_date)
-			$date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
-		else
-			$date = '';
-		$author = sprintf( '<span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><span class="author vcard" itemprop="name"><b>%1$s</b></span></span>',
-			get_the_author()
-		);
-		$author_email = get_the_author_meta( 'user_email' );
-		$author_avatar = get_avatar( $author_email, 40 );
-		$post_comments_number = cwp_post_number_of_comments();
-		// Translators: 1 is category, 2 is the date and 3 is the author's name, 4 is the last updated date, 5 is the number of comments for the post.
-		if ( $categories_list ) {
-			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
-		} else {
-			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
-		}
-		printf(
-			$utility_text,
-			$categories_list,
-			$date,
-			$author,
-			$author_avatar,
-			$post_comments_number
-		);
-	}
-endif;
+/**
+ * Display entry meta for post
+ * @param bool $is_date - show post's last updated date
+ * @param bool $show_gravatar - show post's author's image
+ */
+function cwp_display_entry_meta( $is_date = false, $show_gravatar = false ) {
 
-if ( ! function_exists( 'cwp_entry_meta_release' ) ) :
-	/*
-	 * Set up post entry meta.
-	 */
-	function cwp_entry_meta_release() {
-		// Translators: used between list items, there is a space after the comma.
-		$categories_list = get_the_category_list( __( ', ', 'cwp' ) );
-		// Translators: used between list items, there is a space after the comma.
-		$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
-		$date = get_the_time( 'F jS, Y' );
-		$author = get_the_author();
-		$author_email = get_the_author_meta( 'user_email' );
-		$author_avatar = get_avatar( $author_email, 40 );
-		$post_comments_number = cwp_post_number_of_comments();
-		// Translators: 1 is category, 2 is the date, 3 is the author's name, 4 is the author's image, 5 is the number of comments for the post.s
-		if ( $categories_list ) {
-			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
-		} else {
-			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
-		}
-		printf(
-			$utility_text,
-			$categories_list,
-			$date,
-			$author,
-			$author_avatar,
-			$post_comments_number
-		);
+	// Translators: used between list items, there is a space after the comma.
+	$categories_list = get_the_category_list( ', ' );
+
+	// Translators: used between list items, there is a space after the comma.
+	$tag_list = get_the_tag_list( '', ', ' );
+
+	$m_time = get_the_modified_time( 'F jS, Y' );
+	$m_time_g = get_the_modified_time('Y-m-j');
+	$p_time = get_the_time( 'F jS, Y' );
+	$p_time_g = get_the_time('Y-m-j');
+
+	$author = get_the_author();
+	$author_email = get_the_author_meta( 'user_email' );
+	$author_avatar = get_avatar( $author_email, 40 );
+	$post_comments_number = cwp_post_number_of_comments();
+
+	if ($is_date && (time()-(60*60*24*120)) < strtotime($m_time_g)) {
+		$date = sprintf(
+		        '<time class="entry-date" datetime="%1$s" itemprop="dateModified" >%2$s</time><meta itemprop="datePublished" content="%3$s">',
+			        $m_time_g,
+			        $m_time,
+			        $p_time_g
+                );
+	} else {
+	    $date = sprintf(
+		        '<time class="entry-date">Updated %1$s</time>',
+		            $p_time
+        );
+
 	}
-endif;
+
+	// Translators: 1 is category, 2 is the date, 3 is the author's name, 4 is the author's image, 5 is the number of comments for the post.
+    // Translators: 1 is author's image, 2 is the author's name, 3 is category, 4 is the date, 5 is the number of comments for the post.
+	if ( $categories_list && $show_gravatar ) {
+		$utility_text = '<span class="by-author"><div class="author-with-img">%1$s</div><span class="author vcard"><b>%2$s</b></span></span> • in %3$s • %4$s <span class="number-of-comments"> %5$s</span>';
+	} else if ( $show_gravatar ) {
+		$utility_text = '<span class="by-author"><div class="author-with-img">%1$s</div><span class="author vcard"><b>%2$s</b></span></span> • %4$s<span class="number-of-comments"> %5$s</span>';
+	} else if ( $categories_list ) {
+		$utility_text = '<span class="by-author"><span class="author vcard">by<b> %2$s</b></span></span> • in %3$s • %4$s <span class="number-of-comments"> %5$s</span>';
+	} else {
+		$utility_text = '<span class="by-author"><span class="author vcard">by<b> %2$s</b></span></span> • %4$s<span class="number-of-comments"> %5$s</span>';
+    }
+    printf(
+	    $utility_text,
+	    $author_avatar,
+	    $author,
+	    $categories_list,
+	    $date,
+	    $post_comments_number
+    );
+}
 
 
 if ( ! function_exists( 'twentytwelve_content_nav' ) ) :

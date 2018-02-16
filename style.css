@@ -662,10 +662,16 @@ border: 0px solid #000000;
 	-o-transform: translateY(30%);
 	transform: translateY(30%);
 }
-#content .metadata .number-of-comments {
+.single-post #content .metadata .number-of-comments {
 	font-weight: inherit;
 	float: right;
 	margin-top: 18px;
+}
+/* Comments on pages without author's immage */
+#content .metadata .number-of-comments {
+	font-weight: inherit;
+	float: right;
+	margin-top: 0;
 }
 
 #content .entry-content {
@@ -2154,7 +2160,8 @@ footer .fmenu input[type=submit]:hover {
 	}
 
 	/* Number of comments for a post, Single Post page and Blog */
-	#content .metadata .number-of-comments {
+	#content .metadata .number-of-comments,
+	.single-post #content .metadata .number-of-comments {
 		float: none;
 	}
 	#content .metadata .number-of-comments:before {
