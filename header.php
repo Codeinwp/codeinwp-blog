@@ -20,10 +20,9 @@
 	<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="referrer" content="origin">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/cwpfavicon.png">
-	<link rel='stylesheet' id='toastrcss-css'  href="<?php echo get_template_directory_uri() .'/css/toastr.min.css';?>" type='text/css' media='all' />
+
 <meta property="fb:pages" content="355212467929786" />
 
 
@@ -33,10 +32,10 @@
 {
   "@context": "http://schema.org",
   "@type": "WebSite",
-  "url": "http://www.codeinwp.com/blog/",
+  "url": "https://www.codeinwp.com/blog/",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "http://www.codeinwp.com/blog/?s={search_term}",
+    "target": "https://www.codeinwp.com/blog/?s={search_term}",
     "query-input": "required name=search_term"
   }
 }
@@ -95,13 +94,13 @@
 								'<div data-depth="0.20" class="layer poly_globe"></div>' +
 								'<div data-depth="0.60" class="layer noonrocketmorning"></div>';
 
-				if ( ! jQuery('#subheader').hasClass('single-post-subheader') ) {
-                    morning +=  '<form action="https://codeinwp.us3.list-manage.com/subscribe/post?u=bf06b9a7223d1c8f65272caf7&amp;id=bd98fdaf54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>' +
-									'<div class="newsletter">Get the list of 10 Tools We Use <br /><span>When Designing for WP That Cut Our Work Time in Half<br />(by the Way, 7 of Them Are Free)</span></div>' +
-									'<input type="email" value="" name="EMAIL" class="emailinput animated flipInY" id="mce-EMAIL" placeholder="Your e-mail address" required>' +
-                                    '<div style="position: absolute; left: -5000px;"><input type="text" name="b_bf06b9a7223d1c8f65272caf7_bd98fdaf54" value=""></div>' +
-                                    '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe animated flipInY" value="Subscribe">' +
-								'</form>';
+                if ( ! jQuery('#subheader').hasClass('single-post-subheader') ) {
+                    morning += '<form action="https://codeinwp.us3.list-manage.com/subscribe/post?u=bf06b9a7223d1c8f65272caf7&amp;id=bd98fdaf54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>' +
+                    '<div class="newsletter">Get the list of 10 Tools We Use <br /><span>When Designing for WP That Cut Our Work Time in Half<br />(by the Way, 7 of Them Are Free)</span></div>' +
+                    '<input type="email" value="" name="EMAIL" class="emailinput animated flipInY" id="mce-EMAIL" placeholder="Your e-mail address" required>' +
+                    '<div style="position: absolute; left: -5000px;"><input type="text" name="b_bf06b9a7223d1c8f65272caf7_bd98fdaf54" value=""></div>' +
+                    '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe animated flipInY" value="Subscribe">' +
+                    '</form>';
                 }
 
                 morning += '</div><!--/container-->';
@@ -121,16 +120,14 @@
 								'<div data-depth="0.90" class="layer circletwo"></div>';
 
                 if ( ! jQuery('#subheader').hasClass('single-post-subheader') ) {
-
-                    noon +=     '<form action="https://codeinwp.us3.list-manage.com/subscribe/post?u=bf06b9a7223d1c8f65272caf7&amp;id=bd98fdaf54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>' +
-                                    '<div class="newsletter">Get the list of 10 Tools We Use <br /><span>When Designing for WP That Cut Our Work Time in Half<br />(by the Way, 7 of Them Are Free)</span></div>' +
-                                    '<input type="email" value="" name="EMAIL" class="emailinput animated flipInY" id="mce-EMAIL" placeholder="Your e-mail address" required>' +
-                                    '<div style="position: absolute; left: -5000px;"><input type="text" name="b_bf06b9a7223d1c8f65272caf7_bd98fdaf54" value=""></div>' +
-                                    '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe animated flipInY" value="Subscribe">' +
-                                '</form>';
+                    noon += '<form action="https://codeinwp.us3.list-manage.com/subscribe/post?u=bf06b9a7223d1c8f65272caf7&amp;id=bd98fdaf54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>' +
+                    '<div class="newsletter">Get the list of 10 Tools We Use <br /><span>When Designing for WP That Cut Our Work Time in Half<br />(by the Way, 7 of Them Are Free)</span></div>' +
+                    '<input type="email" value="" name="EMAIL" class="emailinput animated flipInY" id="mce-EMAIL" placeholder="Your e-mail address" required>' +
+                    '<div style="position: absolute; left: -5000px;"><input type="text" name="b_bf06b9a7223d1c8f65272caf7_bd98fdaf54" value=""></div>' +
+                    '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe animated flipInY" value="Subscribe">' +
+                    '</form>';
                 }
-
-                noon += '</div><!--/container-->';
+				noon +=	'</div><!--/container-->';
 				jQuery('#subheader').append(noon);
 				jQuery('#headernav ul li:last').addClass('day');
 		    }
@@ -160,13 +157,12 @@
 								'<div data-depth="0.60" class="layer night_rocket"></div>';
 
                 if ( ! jQuery('#subheader').hasClass('single-post-subheader') ) {
-
-                    night +=    '<form action="https://codeinwp.us3.list-manage.com/subscribe/post?u=bf06b9a7223d1c8f65272caf7&amp;id=bd98fdaf54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>' +
-                                    '<div class="newsletter">Get the list of 10 Tools We Use <br /><span>When Designing for WP That Cut Our Work Time in Half <br />(by the Way, 7 of Them Are Free)</span></div>' +
-                                    '<input type="email" value="" name="EMAIL" class="emailinput animated flipInY" id="mce-EMAIL" placeholder="Your e-mail address" required>' +
-                                    '<div style="position: absolute; left: -5000px;"><input type="text" name="b_bf06b9a7223d1c8f65272caf7_bd98fdaf54" value=""></div>' +
-                                    '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe animated flipInY" value="Subscribe">' +
-                                '</form>';
+                    night += '<form action="https://codeinwp.us3.list-manage.com/subscribe/post?u=bf06b9a7223d1c8f65272caf7&amp;id=bd98fdaf54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>' +
+                    '<div class="newsletter">Get the list of 10 Tools We Use <br /><span>When Designing for WP That Cut Our Work Time in Half <br />(by the Way, 7 of Them Are Free)</span></div>' +
+                    '<input type="email" value="" name="EMAIL" class="emailinput animated flipInY" id="mce-EMAIL" placeholder="Your e-mail address" required>' +
+                    '<div style="position: absolute; left: -5000px;"><input type="text" name="b_bf06b9a7223d1c8f65272caf7_bd98fdaf54" value=""></div>' +
+                    '<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe animated flipInY" value="Subscribe">' +
+                    '</form>';
                 }
 
 				night += '</div><!--/container-->';

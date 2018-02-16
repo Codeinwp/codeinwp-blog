@@ -5,9 +5,13 @@
  * @package CWP
  */
 ?>
+	
 	</div><!--container / wrap-->
+	<div>	<?php echo do_shortcode( '[elementor-template id="23941"]' ); ?></div>
 	<footer>
+
 		<div class="container">
+		
 			<div class="aboutus">
 				<div class="logo">	<div itemscope itemtype="http://schema.org/Corporation"><meta itemprop="name" content="Codeinwp"></meta><link itemprop="url" href="http://codeinwp.com/"> <img itemprop="logo" src="<?php echo get_template_directory_uri(); ?>/images/footer_logo.png "/><meta itemprop="vatID" content="RO29109287"></meta><meta itemprop="email" content="support@codeinwp.com"></meta><meta itemprop="legalName" content="Vertigo Studio SRL"></meta></div>
 			</div>
@@ -16,8 +20,7 @@
 					<div class="email">Email us<br /><span><?php echo get_theme_mod('cwp_footer_email'); ?></span></div>
 				</div><!--/contact-->
 			<div class="copyright">
-					© 2017 codeinwp.com. All Rights Reserved. <br />
-					WordPress logo is Copyright © WordPress.com
+                <?php cwp_display_copyright(); ?>
 				</div><!--/copyright-->
 			</div><!--/aboutus-->
     		<?php
@@ -70,23 +73,7 @@
 
 
 </script>
-<script type="text/javascript">
-  (function() {
-    window._pa = window._pa || {};
-    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
-    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
-    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
-    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
-    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/52b64a399cbe25d21f000003.js";
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
-  })();
-</script>
-<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
-<script type="text/javascript">
-twttr.conversion.trackPid('l56rq');</script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l56rq&p_id=Twitter" />
-<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l56rq&p_id=Twitter" /></noscript>
+
  
 <script type="text/javascript">
 (function (tos) {

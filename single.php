@@ -25,7 +25,6 @@ get_header(); ?>
     </div></div>
 				<div class="metadata">
 					<?php cwp_entry_meta_with_gravatar(); ?>
-					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
 				</div><!--/metadata-->
 				<?php
 					if ($featured_image_url != NULL) {

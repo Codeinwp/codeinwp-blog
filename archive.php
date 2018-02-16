@@ -9,7 +9,7 @@ get_header(); ?>
             <div class="archive-navigation">
                 <?php
                     if ( is_category() ) {
-                        echo 'Category: ';
+                        
                         single_cat_title();
                     }
                     if ( is_author() ) {
@@ -42,7 +42,6 @@ get_header(); ?>
 				<?php endif; // is_single() ?>
 				<div class="metadata">
 					<?php cwp_entry_meta_release(); ?>
-					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
 				</div><!--/metadata-->
 				<?php
 					$get_permalink = get_permalink();
@@ -50,11 +49,7 @@ get_header(); ?>
 						echo '<a href="' . $get_permalink . '" class="image"><img src="' . $featured_image_url . '" /></a>';
 					}
 				?>
-                 <a class="button_pinterest" href="http://www.pinterest.com/pin/create/button/
-                        ?url=<?php the_permalink(); ?>
-                        &media=<?php echo $featured_image_url; ?>
-                        &description=<?php the_title(); ?>" data-pin-do="buttonPin" data-pin-shape="round" data-pin-height="32">
-                <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" /></a>
+                
 				<?php if ( is_single() ) : ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
@@ -103,5 +98,6 @@ get_header(); ?>
 
 		<?php endif; // end have_posts() check ?>
 		</main><!--/content-->
+		
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

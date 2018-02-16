@@ -15,14 +15,10 @@ require_once ( 'inc/metaboxes/custom-metaboxes.php' ); // Custom Metaboxes
  *  Theme Name Scripts
  */
 function cwp_theme_name_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '2.8' );
-	wp_enqueue_style( 'font-family-source-sans-pro', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' );
-	wp_enqueue_style( 'font-family-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300' );
-    wp_enqueue_style( 'font-family-lato', '//fonts.googleapis.com/css?family=Lato:400,700' );
-	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'subheader-animation', get_template_directory_uri() . '/js/subheader-animation.js', array('jquery'), '1', true );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '2.8.2' );
+
+	wp_enqueue_script( 'subheader-animation', get_template_directory_uri() . '/js/subheader-animation.js', array('jquery'), '11', true );
     wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1', true );
-    wp_enqueue_script( 'pint', '//assets.pinterest.com/js/pinit.js', array('jquery'), '1', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'cwp_theme_name_scripts' );
@@ -48,6 +44,19 @@ if ( ! isset( $content_width ) )
  * Register sidebars.
  */
  function cwp_widgets_init() {
+     
+
+    register_sidebar( array(
+        'name' => __( 'Home Sidebar', 'cwp' ),
+        'id' => 'sidebar-4',
+        'class'         => 'elementor-sidebar',
+        'description' => __( 'Widgets in this area will be shown on Home.', 'theme-slug' ),
+        'before_widget' => '<div id="%1$s" class="widgetelem %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h2 class="widget-title">',
+	'after_title'   => '</h2>',
+    ) );
+
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'cwp' ),
 		'id' => 'sidebar-1',
@@ -97,16 +106,14 @@ function cwp_entry_meta($is_date=true) {
     $m_time_g = get_the_modified_time('Y-m-j');
     $p_time = get_the_time( 'F jS, Y' );
     $p_time_g = get_the_time('Y-m-j');
-    if ($is_date)
-	    $date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
+    if ($is_date && (time()-(60*60*24*120)) < strtotime($m_time_g))
+	    $date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'.$p_time_g.'">';
 	else
 	    $date = '';
 
 	$author = sprintf( '<span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><span class="author vcard" itemprop="name"><b>%1$s</b></span></span>',
 		get_the_author()
 	);
-
-
 
 	// Translators: 1 is category, 2 is the date and 3 is the author's name.
 	if ( $categories_list ) {
@@ -133,7 +140,9 @@ function cwp_post_number_of_comments() {
 	$comments_number = get_comments_number();
 	if ( 1 === (int)$comments_number ) {
 		return sprintf( _x( 'One Comment', 'comments title', 'cwp' ) );
-	} else {
+	} else if ( 0 === (int)$comments_number ) {
+		return sprintf( _x( 'No Comments', 'comments title', 'cwp' ) );
+    } else {
 		return sprintf(
 			_nx(
 				'%1$s Comment',
@@ -158,36 +167,28 @@ if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
 	function cwp_entry_meta_with_gravatar($is_date=true) {
 		// Translators: used between list items, there is a space after the comma.
 		$categories_list = get_the_category_list( __( ', ', 'cwp' ) );
-
 		// Translators: used between list items, there is a space after the comma.
 		$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
-
-        $m_time = get_the_modified_time( 'F jS, Y' );
+		$m_time = get_the_modified_time( 'F jS, Y' );
 		$m_time_g = get_the_modified_time('Y-m-j');
 		$p_time = get_the_time( 'F jS, Y' );
 		$p_time_g = get_the_time('Y-m-j');
-
 		if ($is_date)
 			$date = '<time class="entry-date" datetime="'.$m_time_g.'" itemprop="dateModified" >'.$m_time.'</time><meta itemprop="datePublished" content="'. $p_time.'">';
 		else
 			$date = '';
-
 		$author = sprintf( '<span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><span class="author vcard" itemprop="name"><b>%1$s</b></span></span>',
 			get_the_author()
 		);
-
 		$author_email = get_the_author_meta( 'user_email' );
 		$author_avatar = get_avatar( $author_email, 40 );
-
 		$post_comments_number = cwp_post_number_of_comments();
-
 		// Translators: 1 is category, 2 is the date and 3 is the author's name, 4 is the last updated date, 5 is the number of comments for the post.
 		if ( $categories_list ) {
 			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
 		} else {
 			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
 		}
-
 		printf(
 			$utility_text,
 			$categories_list,
@@ -200,38 +201,34 @@ if ( ! function_exists( 'cwp_entry_meta_with_gravatar' ) ) :
 endif;
 
 if ( ! function_exists( 'cwp_entry_meta_release' ) ) :
-/*
- * Set up post entry meta.
- */
-function cwp_entry_meta_release() {
-	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'cwp' ) );
-
-	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
-
-	$date = get_the_time( 'F jS, Y' );
-	$author = get_the_author();
-	$author_email = get_the_author_meta( 'user_email' );
-	$author_avatar = get_avatar( $author_email, 40 );
-	$post_comments_number = cwp_post_number_of_comments();
-
-	// Translators: 1 is category, 2 is the date, 3 is the author's name, 4 is the author's image, 5 is the number of comments for the post.s
-	if ( $categories_list ) {
-		$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
-	} else {
-		$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
+	/*
+	 * Set up post entry meta.
+	 */
+	function cwp_entry_meta_release() {
+		// Translators: used between list items, there is a space after the comma.
+		$categories_list = get_the_category_list( __( ', ', 'cwp' ) );
+		// Translators: used between list items, there is a space after the comma.
+		$tag_list = get_the_tag_list( '', __( ', ', 'cwp' ) );
+		$date = get_the_time( 'F jS, Y' );
+		$author = get_the_author();
+		$author_email = get_the_author_meta( 'user_email' );
+		$author_avatar = get_avatar( $author_email, 40 );
+		$post_comments_number = cwp_post_number_of_comments();
+		// Translators: 1 is category, 2 is the date, 3 is the author's name, 4 is the author's image, 5 is the number of comments for the post.s
+		if ( $categories_list ) {
+			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • in %1$s • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
+		} else {
+			$utility_text = __( '<span class="by-author"><div class="author-with-img">%4$s</div><span class="author vcard"><b>%3$s</b></span></span> • <time class="entry-date">Updated %2$s</time><span class="number-of-comments"> %5$s</span>', 'cwp' );
+		}
+		printf(
+			$utility_text,
+			$categories_list,
+			$date,
+			$author,
+			$author_avatar,
+			$post_comments_number
+		);
 	}
-
-	printf(
-		$utility_text,
-		$categories_list,
-		$date,
-		$author,
-		$author_avatar,
-		$post_comments_number
-	);
-}
 endif;
 
 
@@ -411,14 +408,24 @@ function filter_product_wpseo_title($title) {
  */
 function cwp_display_current_post_title() {
 
-    $current_post_title = single_post_title( '',false );
+	$current_post_title = single_post_title( '',false );
 
-    printf(
-        '<h1 class="single-post-title entry-title" itemprop="headline">%1$s</h1>',
-	    $current_post_title
-    );
+	printf(
+		'<h1 class="single-post-title entry-title container" itemprop="headline">%1$s</h1>',
+		$current_post_title
+	);
 
 }
 add_action( 'cwp_single_post_header', 'cwp_display_current_post_title' );
+
+function cwp_display_copyright() {
+
+    $current_year = date('Y');
+
+    printf(
+        '© %1$s codeinwp.com. All Rights Reserved. <br />WordPress logo is Copyright © WordPress.com',
+	    $current_year
+        );
+}
 
 ?>
