@@ -41,7 +41,7 @@ get_header(); ?>
 					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php endif; // is_single() ?>
 				<div class="metadata">
-					<?php cwp_entry_meta_release(); ?>
+					<?php cwp_display_entry_meta( false, false ); ?>
 				</div><!--/metadata-->
 				<?php
 					$get_permalink = get_permalink();

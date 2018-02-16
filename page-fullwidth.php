@@ -28,7 +28,7 @@ get_header(); ?>
 	</div>
    </div>
 				<div class="metadata">
-					<?php cwp_entry_meta_with_gravatar(); ?>
+					<?php cwp_display_entry_meta( true,true ); ?>
 				</div><!--/metadata-->
 				<?php
 					if ($featured_image_url != NULL) {
