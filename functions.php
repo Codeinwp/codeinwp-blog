@@ -404,20 +404,8 @@ function filter_product_wpseo_title($title) {
 }
 
 /**
- * Display post tile on single post page in the header
+ * Show footer copyright
  */
-function cwp_display_current_post_title() {
-
-	$current_post_title = single_post_title( '',false );
-
-	printf(
-		'<h1 class="single-post-title entry-title container" itemprop="headline">%1$s</h1>',
-		$current_post_title
-	);
-
-}
-add_action( 'cwp_single_post_header', 'cwp_display_current_post_title' );
-
 function cwp_display_copyright() {
 
     $current_year = date('Y');
@@ -425,7 +413,7 @@ function cwp_display_copyright() {
     printf(
         '© %1$s codeinwp.com. All Rights Reserved. <br />WordPress logo is Copyright © WordPress.com',
 	    $current_year
-        );
+    );
 }
 
 ?>

@@ -23,6 +23,7 @@ get_header(); ?>
       <meta itemprop="width" content="255">
       <meta itemprop="height" content="60">
     </div></div>
+                <h1 class="singletitle" class="single-post-title entry-title" itemprop="headline"><?php the_title(); ?></h1>
 				<div class="metadata">
 					<?php cwp_entry_meta_with_gravatar(); ?>
 				</div><!--/metadata-->
