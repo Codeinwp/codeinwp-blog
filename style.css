@@ -4,7 +4,7 @@
 	Author: Codeinwp
 	Author URI: http://www.codeinwp.com
 	Description: Codeinwp Blog Theme v2.6
-	Version: 2.6.2
+	Version: 2.8.2
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -247,6 +247,11 @@ footer .fmenu li:before,
 
 #subheader.morning {
 	background-image: url(images/morning_bg.jpg);
+}
+
+#subheader .entry-title.container {
+	position: absolute;
+	height: auto;
 }
 
 #subheader .container {
@@ -1946,8 +1951,11 @@ footer .fmenu input[type=submit]:hover {
 	}
 }
 @media only screen and (max-width: 768px) {
-    
 
+	#subheader .entry-title {
+		font-size: 25px;
+		line-height: 1.6;
+	}
 
     .entry-content img {
         max-width: 100%;

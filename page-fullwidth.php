@@ -22,11 +22,11 @@ get_header(); ?>
 				<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
    <meta itemprop="name" content="Codeinwp">
    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      
-      <meta itemprop="url" content="http://www.codeinwp.com/blog/wp-content/themes/CWPBlog_v2.6/images/logo.png">
-      <meta itemprop="width" content="255">
-      <meta itemprop="height" content="60">
-    </div>
+
+	  <meta itemprop="url" content="http://www.codeinwp.com/blog/wp-content/themes/CWPBlog_v2.6/images/logo.png">
+	  <meta itemprop="width" content="255">
+	  <meta itemprop="height" content="60">
+	</div>
    </div>
 				<h1 class="singletitle" itemprop="headline"><?php the_title(); ?></h1>
 				<div class="metadata">
@@ -35,8 +35,8 @@ get_header(); ?>
 				<?php
 					if ($featured_image_url != NULL) {
 						echo '<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="'.$featured_image_url.'">
-    <meta itemprop="width" content="800">
-    <meta itemprop="height" content="400"></div>';
+	<meta itemprop="width" content="800">
+	<meta itemprop="height" content="400"></div>';
 					}
 				?>
 
@@ -50,57 +50,57 @@ get_header(); ?>
 								'link_after'  => '</span>',
 							) );
 
-        
-                            if( has_tag() ) {
-                                echo '<div class="post-tags">
-            						'.the_tags().'
-        						</div><!--/.post-tags-->';
-                            }
-                            else {
 
-                            }
+							if( has_tag() ) {
+								echo '<div class="post-tags">
+									'.the_tags().'
+								</div><!--/.post-tags-->';
+							}
+							else {
+
+							}
 						?>
 
-                        <div class="cf"></div>
+						<div class="cf"></div>
 					</div><!--/entry-content-->
 					<?php /*
-                    <div class="related_posts">
-                        <h2>Related articles:</h2>
-                        <?php
-                        $categories = get_the_category( $post->ID );
-                        $category_id = $categories[0]->term_id;
+					<div class="related_posts">
+						<h2>Related articles:</h2>
+						<?php
+						$categories = get_the_category( $post->ID );
+						$category_id = $categories[0]->term_id;
 
-                        // WP_Query arguments
-                        $args = array (
-                            'cat'                    => $category_id,
-                            'posts_per_page'         => '5',
-                            'orderby'                  => 'rand'
-                        );
+						// WP_Query arguments
+						$args = array (
+							'cat'                    => $category_id,
+							'posts_per_page'         => '5',
+							'orderby'                  => 'rand'
+						);
 
-                        // The Query
-                        $related = new WP_Query( $args );
+						// The Query
+						$related = new WP_Query( $args );
 
-                        // The Loop
-                        if ( $related->have_posts() ) {
-                        	while ( $related->have_posts() ) {
-                        		$related->the_post();
-                                $permalink = get_permalink();
-                                $title = get_the_title();
-                        		echo '<a class="row" href="'.$permalink.'" title="'.$title.'">'.$title.'</a><!--/row-->';
-                        	}
-                        } else {
-                        }
-                        // Restore original Post Data
-                        wp_reset_postdata();
-                        ?>
+						// The Loop
+						if ( $related->have_posts() ) {
+							while ( $related->have_posts() ) {
+								$related->the_post();
+								$permalink = get_permalink();
+								$title = get_the_title();
+								echo '<a class="row" href="'.$permalink.'" title="'.$title.'">'.$title.'</a><!--/row-->';
+							}
+						} else {
+						}
+						// Restore original Post Data
+						wp_reset_postdata();
+						?>
 
 
-                    </div><!--/related_posts-->
-                    */ ?>
+					</div><!--/related_posts-->
+					*/ ?>
 					<?php comments_template(); ?>
 			</div><!--/post-->
 				<?php } else { ?>
-			    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<h1 class="singletitle"><?php the_title(); ?></h1>
 				<img src="<?php echo get_post_meta( get_the_ID(), 'infographic', true );?>"></img>
 			</div>
