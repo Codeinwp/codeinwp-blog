@@ -640,26 +640,6 @@ border: 0px solid #000000;
 	font-weight: 300;
 }
 
-/* Single post page, header title */
-.single-post .single-post-title {
-	color: #fff;
-	font-size: 32px;
-	font-weight: 600;
-	text-align: center;
-	text-shadow: 1px 1px 1px rgb( 24, 102, 126 );
-	position: absolute;
-	top: 50%;
-	left: 0;
-	right: 0;
-	margin: auto;
-	z-index: 100;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
 /* Post Author Image */
 .metadata {
 	line-height: 30px;
@@ -677,10 +657,16 @@ border: 0px solid #000000;
 	-o-transform: translateY(30%);
 	transform: translateY(30%);
 }
-#content .metadata .number-of-comments {
+.single-post #content .metadata .number-of-comments {
 	font-weight: inherit;
 	float: right;
 	margin-top: 18px;
+}
+/* Comments on pages without author's image */
+#content .metadata .number-of-comments {
+	font-weight: inherit;
+	float: right;
+	margin-top: 0;
 }
 
 #content .entry-content {
@@ -2166,7 +2152,8 @@ footer .fmenu input[type=submit]:hover {
 	}
 
 	/* Number of comments for a post, Single Post page and Blog */
-	#content .metadata .number-of-comments {
+	#content .metadata .number-of-comments,
+	.single-post #content .metadata .number-of-comments {
 		float: none;
 	}
 	#content .metadata .number-of-comments:before {

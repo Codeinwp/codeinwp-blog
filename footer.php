@@ -19,10 +19,7 @@
 					<div class="phone">Call us<br /><span><?php echo get_theme_mod('cwp_footer_phone_number'); ?></span></div>
 					<div class="email">Email us<br /><span><?php echo get_theme_mod('cwp_footer_email'); ?></span></div>
 				</div><!--/contact-->
-			<div class="copyright">
-					© 2018 codeinwp.com. All Rights Reserved. <br />
-					WordPress logo is Copyright © WordPress.com
-				</div><!--/copyright-->
+			<div class="copyright"><?php cwp_display_copyright(); ?></div><!--/copyright-->
 			</div><!--/aboutus-->
     		<?php
                 if ( is_active_sidebar( 'sidebar-2' ) ) {

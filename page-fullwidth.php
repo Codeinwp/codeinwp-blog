@@ -30,8 +30,7 @@ get_header(); ?>
    </div>
 				<h1 class="singletitle" itemprop="headline"><?php the_title(); ?></h1>
 				<div class="metadata">
-					<?php if ($post->ID!==42733 ) { ?> Updated on <?php cwp_entry_meta(); ?> <?php } else { echo 'Published in'; cwp_entry_meta(false); } ?>
-					<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
+					<?php cwp_display_entry_meta( true,true ); ?>
 				</div><!--/metadata-->
 				<?php
 					if ($featured_image_url != NULL) {
