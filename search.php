@@ -24,8 +24,7 @@ get_header(); ?>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<?php endif; // is_single() ?>
 					<div class="metadata">
-						<?php cwp_entry_meta(); ?>
-						<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
+						<?php cwp_display_entry_meta( true, false ); ?>
 					</div><!--/metadata-->
 					<?php
 						if ($featured_image_url != NULL) {

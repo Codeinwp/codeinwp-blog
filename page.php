@@ -14,8 +14,7 @@ get_header(); ?>
 			<div id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<h3><a><?php the_title(); ?></a></h3>
 				<div class="metadata">
-				<?php cwp_entry_meta(); ?>
-				<?php comments_number( '- No Comments', '- One Comment', '- % Comments' ); ?>
+				<?php cwp_display_entry_meta( true, false ); ?>
 				</div><!--/metadata-->
 				<div class="entry-content excerpt">
 					<?php the_content(); ?>
