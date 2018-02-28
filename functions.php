@@ -145,10 +145,7 @@ function cwp_display_entry_meta( $is_date = false, $show_gravatar = false ) {
 			$p_time_g
 		);
 	} else {
-		$date = sprintf(
-			'<time class="entry-date">Updated %1$s</time>',
-			$p_time
-		);
+		$date = '';
 
 	}
 
