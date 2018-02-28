@@ -15,7 +15,7 @@ require_once ( 'inc/metaboxes/custom-metaboxes.php' ); // Custom Metaboxes
  *  Theme Name Scripts
  */
 function cwp_theme_name_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '2.8.3' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '2.8.4' );
 
 	wp_enqueue_script( 'subheader-animation', get_template_directory_uri() . '/js/subheader-animation.js', array('jquery'), '11', true );
     wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1', true );
@@ -145,10 +145,7 @@ function cwp_display_entry_meta( $is_date = false, $show_gravatar = false ) {
 			$p_time_g
 		);
 	} else {
-		$date = sprintf(
-			'<time class="entry-date">Updated %1$s</time>',
-			$p_time
-		);
+		$date = '';
 
 	}
 
