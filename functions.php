@@ -116,38 +116,30 @@ function cwp_post_number_of_comments() {
 
 /**
  * Display entry meta for post
- * @param bool $is_date - show post's last updated date
+ *
  * @param bool $show_gravatar - show post's author's image
  */
-function cwp_display_entry_meta( $is_date = false, $show_gravatar = false ) {
+function cwp_display_entry_meta( $show_gravatar = false ) {
 
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( ', ' );
 
-	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', ', ' );
-
 	$m_time = get_the_modified_time( 'F jS, Y' );
-	$m_time_g = get_the_modified_time('Y-m-j');
-	$p_time = get_the_time( 'F jS, Y' );
-	$p_time_g = get_the_time('Y-m-j');
+
+	// Check if is a Single Post page and hide the date if post is older than 4 months
+	if ( is_single() && (time()-(4*MONTH_IN_SECONDS)) > strtotime($m_time) ) {
+		$date = '';
+	} else {
+		$date = sprintf(
+			'<time class="entry-date">Updated on %1$s</time>',
+			$m_time
+		);
+	}
 
 	$author = get_the_author();
 	$author_email = get_the_author_meta( 'user_email' );
 	$author_avatar = get_avatar( $author_email, 40 );
 	$post_comments_number = cwp_post_number_of_comments();
-
-	if ($is_date && (time()-(60*60*24*120)) < strtotime($m_time_g)) {
-		$date = sprintf(
-			'<time class="entry-date" datetime="%1$s" itemprop="dateModified" >%2$s</time><meta itemprop="datePublished" content="%3$s">',
-			$m_time_g,
-			$m_time,
-			$p_time_g
-		);
-	} else {
-		$date = '';
-
-	}
 
 	// Translators: 1 is author's image, 2 is the author's name, 3 is category, 4 is the date, 5 is the number of comments for the post.
 	if ( $categories_list && $show_gravatar ) {
