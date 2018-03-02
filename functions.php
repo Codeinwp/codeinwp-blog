@@ -131,7 +131,7 @@ function cwp_display_entry_meta( $show_gravatar = false ) {
 		$date = '';
 	} else {
 		$date = sprintf(
-			'<time class="entry-date">Updated on %1$s</time>',
+			'<time class="entry-date"> • Updated on %1$s</time>',
 			$m_time
 		);
 	}
@@ -143,13 +143,13 @@ function cwp_display_entry_meta( $show_gravatar = false ) {
 
 	// Translators: 1 is author's image, 2 is the author's name, 3 is category, 4 is the date, 5 is the number of comments for the post.
 	if ( $categories_list && $show_gravatar ) {
-		$utility_text = '<span class="by-author"><div class="author-with-img">%1$s</div><span class="author vcard"><b>%2$s</b></span></span> • in %3$s • %4$s <span class="number-of-comments"> %5$s</span>';
+		$utility_text = '<span class="by-author"><div class="author-with-img">%1$s</div><span class="author vcard"><b>%2$s</b></span></span> • in %3$s %4$s <span class="number-of-comments"> %5$s</span>';
 	} else if ( $show_gravatar ) {
-		$utility_text = '<span class="by-author"><div class="author-with-img">%1$s</div><span class="author vcard"><b>%2$s</b></span></span> • %4$s<span class="number-of-comments"> %5$s</span>';
+		$utility_text = '<span class="by-author"><div class="author-with-img">%1$s</div><span class="author vcard"><b>%2$s</b></span></span> %4$s<span class="number-of-comments"> %5$s</span>';
 	} else if ( $categories_list ) {
-		$utility_text = '<span class="by-author"><span class="author vcard">by<b> %2$s</b></span></span> • in %3$s • %4$s <span class="number-of-comments"> %5$s</span>';
+		$utility_text = '<span class="by-author"><span class="author vcard">by<b> %2$s</b></span></span> • in %3$s %4$s <span class="number-of-comments"> %5$s</span>';
 	} else {
-		$utility_text = '<span class="by-author"><span class="author vcard">by<b> %2$s</b></span></span> • %4$s<span class="number-of-comments"> %5$s</span>';
+		$utility_text = '<span class="by-author"><span class="author vcard">by<b> %2$s</b></span></span> %4$s<span class="number-of-comments"> %5$s</span>';
 	}
 	printf(
 		$utility_text,
