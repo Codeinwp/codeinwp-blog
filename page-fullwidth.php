@@ -30,7 +30,7 @@ get_header(); ?>
    </div>
 				<h1 class="singletitle" itemprop="headline"><?php the_title(); ?></h1>
 				<div class="metadata">
-					<?php cwp_display_entry_meta( true,true ); ?>
+					<?php cwp_display_entry_meta( true ); ?>
 				</div><!--/metadata-->
 				<?php
 					if ($featured_image_url != NULL) {
