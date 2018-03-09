@@ -4,7 +4,7 @@
 	Author: Codeinwp
 	Author URI: http://www.codeinwp.com
 	Description: Codeinwp Blog Theme v2.6
-	Version: 2.8.4
+	Version: 2.8.5
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -601,7 +601,8 @@ border: 0px solid #000000;
 	display: block;
 	color: #0a4266;
 	font-weight: 600;
-	font-size: 32px;
+	font-size: 28px;
+
 }
 
 .post .singleimg {
@@ -704,7 +705,7 @@ font-family: "proxima-nova",sans-serif ;
 .entry-content ol li,
 #content .post ol li {
 	margin-left: 25px;
-	list-style: lower-alpha;
+	list-style: decimal;
 }
 
 .entry-content a,
@@ -1874,21 +1875,14 @@ footer .fmenu input[type=submit]:hover {
 	color: #EC6551;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 480px) {
 
-	#subheader .emailinput {
-		width: 95% !important;
-		padding: 0 2.5% !important;
-		margin-left: 0 !important;
-		text-align: center;
-		float: none;
+	#subheader {
+	    display:none!important;
 	}
-
-	#subheader .subscribe {
-		width: 100% !important;
-		height: 56px;
+	.container.cf {
+	    border-top:1px solid grey;
 	}
-
 	#pagination .pages {
 		width: 87% !important;
 	}
@@ -1916,6 +1910,9 @@ footer .fmenu input[type=submit]:hover {
 	}
 }
 @media only screen and (max-width: 480px) {
+    .metadata .entry-date, .metadata .number-of-comments {
+        display:none;
+    }
 
     #content .post h3 a, #content .page h3 a {
      

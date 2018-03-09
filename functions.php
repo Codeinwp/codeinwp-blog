@@ -12,13 +12,14 @@ require_once ( 'inc/custom-widgets.php' ); // Custom Widgets
 require_once ( 'inc/custom-shortcodes.php' ); // Custom Shortcodes
 require_once ( 'inc/metaboxes/custom-metaboxes.php' ); // Custom Metaboxes
 /**
- *  Theme Name Scripts
+ *  Theme Name Script6
  */
 function cwp_theme_name_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '2.8.4' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '2.8.8' );
 
-	wp_enqueue_script( 'subheader-animation', get_template_directory_uri() . '/js/subheader-animation.js', array('jquery'), '11', true );
+	wp_enqueue_script( 'subheader-animation', get_template_directory_uri() . '/js/subheader-animation.js', array('jquery'), '1.2', true );
     wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1', true );
+     wp_enqueue_script( 'footer-script', get_stylesheet_directory_uri() . '/js/footer.js', array( 'jquery' ), '1.5', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'cwp_theme_name_scripts' );
@@ -125,18 +126,24 @@ function cwp_display_entry_meta( $show_gravatar = false ) {
 	$categories_list = get_the_category_list( ', ' );
 
 	$m_time = get_the_modified_time( 'F jS, Y' );
-
+    $m_time_g = get_the_modified_time('Y-m-j');
+    $p_time = get_the_time('Y-m-j');
 	// Check if is a Single Post page and hide the date if post is older than 4 months
 	if ( is_single() && (time()-(4*MONTH_IN_SECONDS)) > strtotime($m_time) ) {
-		$date = '';
+			$date = sprintf(
+			'<time class="entry-date" itemprop="dateModified" datetime="'.$m_time_g.'"> • Updated on %1$s</time><meta itemprop="datePublished" content="'. $p_time.'">',
+			$m_time
+		);
 	} else {
 		$date = sprintf(
-			'<time class="entry-date"> • Updated on %1$s</time>',
+			'<time class="entry-date" itemprop="dateModified" datetime="'.$m_time_g.'"> • Updated on %1$s</time><meta itemprop="datePublished" content="'. $p_time.'">',
 			$m_time
 		);
 	}
 
-	$author = get_the_author();
+    $author = sprintf( '<span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><span class="author vcard" itemprop="name"><b>%1$s</b></span></span>',
+		get_the_author()
+	);
 	$author_email = get_the_author_meta( 'user_email' );
 	$author_avatar = get_avatar( $author_email, 40 );
 	$post_comments_number = cwp_post_number_of_comments();
@@ -345,5 +352,6 @@ function cwp_display_copyright() {
 	);
 }
 
-
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
 ?>

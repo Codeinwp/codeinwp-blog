@@ -1,5 +1,6 @@
 				//Setup aniamtion
-				jQuery(document).ready(function($) {
+				document.addEventListener("DOMContentLoaded", function() {
+
 				  
 				    if (window.location.hash.indexOf('#')>=0 && window.location.href.indexOf('best-wordpress-hosting')>0 )
 				    $("a").each(function(index){
@@ -114,4 +115,6 @@
                             $(this).before('<div class="codeinwp-button-demo"><a href="' + $(this).attr("data-demo") +  '" target="_blank">Demo</a></div>');
 				        }    
                     });
-				});
+				
+				  
+});
