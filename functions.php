@@ -91,31 +91,6 @@ if ( ! isset( $content_width ) )
 add_action( 'widgets_init', 'cwp_widgets_init' );
 
 /**
- * Get the number of comments for a post
- *
- * @return string - number of comments
- */
-function cwp_post_number_of_comments() {
-	$comments_number = get_comments_number();
-	if ( 1 === (int)$comments_number ) {
-		return sprintf( _x( 'One Comment', 'comments title', 'cwp' ) );
-	} else if ( 0 === (int)$comments_number ) {
-		return sprintf( _x( 'No Comments', 'comments title', 'cwp' ) );
-	} else {
-		return sprintf(
-			_nx(
-				'%1$s Comment',
-				'%1$s Comments',
-				$comments_number,
-				'comments title',
-				'cwp'
-			),
-			number_format_i18n( $comments_number )
-		);
-	}
-}
-
-/**
  * Display entry meta for post
  *
  * @param bool $show_gravatar - show post's author's image
@@ -146,7 +121,7 @@ function cwp_display_entry_meta( $show_gravatar = false ) {
 	);
 	$author_email = get_the_author_meta( 'user_email' );
 	$author_avatar = get_avatar( $author_email, 40 );
-	$post_comments_number = cwp_post_number_of_comments();
+	$post_comments_number = cwp_disqus_count_comments( 'codeinwpblog' );
 
 	// Translators: 1 is author's image, 2 is the author's name, 3 is category, 4 is the date, 5 is the number of comments for the post.
 	if ( $categories_list && $show_gravatar ) {
@@ -354,4 +329,17 @@ function cwp_display_copyright() {
 
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
+
+/**
+ * The number of disqus comments
+ *
+ * @param $disqus_shortname - related to the name of the blog, can be found in disqus admin page, it's unique for each blog
+ *
+ * @return string - number of comments and link to the comments section
+ */
+function cwp_disqus_count_comments( $disqus_shortname ) {
+    wp_enqueue_script('disqus_count','http://'.$disqus_shortname.'.disqus.com/count.js');
+    return '<a href="'. get_permalink() .'#disqus_thread"></a>';
+}
+
 ?>
