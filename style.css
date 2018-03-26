@@ -668,11 +668,25 @@ border: 0px solid #000000;
 	float: right;
 	margin-top: 18px;
 }
+.single-post #content .metadata .number-of-comments a {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-transform: capitalize;
+}
 /* Comments on pages without author's image */
 #content .metadata .number-of-comments {
 	font-weight: inherit;
 	float: right;
 	margin-top: 0;
+}
+#content .metadata .number-of-comments a {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-transform: capitalize;
 }
 
 #content .entry-content {
