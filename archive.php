@@ -49,20 +49,15 @@ get_header(); ?>
 						echo '<a href="' . $get_permalink . '" class="image"><img src="' . $featured_image_url . '" /></a>';
 					}
 				?>
-                
-				<?php if ( is_single() ) : ?>
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div>
-				<?php else : ?>
-					<div class="excerpt">
-					<?php the_content(); ?>
-
-					</div><!--/excerpt-->
-				<?php endif; // is_single() ?>
-				<?php if ( !is_single() ) : ?>
-
-				<?php endif; // is_single() ?>
+                <div class="excerpt">
+					<?php
+					if ( has_excerpt() ) {
+						the_excerpt();
+					} else {
+						the_content();
+					}
+					?>
+                </div>
 			</div><!--/post-->
 			<?php endwhile; ?>
         <?php codeinwpblog_paging_nav(); ?>
