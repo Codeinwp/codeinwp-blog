@@ -39,18 +39,15 @@ get_header(); ?>
 						echo '<div class="image" style="background-image: url(' .$featured_image_url .');"></div>';
 					}
 				?>
-				<?php if ( is_single() ) : ?>
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div>
-				<?php else : ?>
-					<div class="excerpt">
-						<?php the_excerpt(); ?>
-					</div><!--/excerpt-->
-				<?php endif; // is_single() ?>
-				<?php if ( !is_single() ) : ?>
-				<a href="<?php the_permalink(); ?>" class="readmore">Continue Reading...</a>
-				<?php endif; // is_single() ?>
+                <div class="excerpt">
+					<?php
+					if ( has_excerpt() ) {
+						the_excerpt();
+					} else {
+						the_content();
+					}
+					?>
+                </div>
 			</div><!--/post-->
 
 				<?php endwhile; ?>

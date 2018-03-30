@@ -25,7 +25,13 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<div class="excerpt">
-					<?php the_content(); ?>
+					<?php
+					if ( has_excerpt() ) {
+						the_excerpt();
+					} else {
+						the_content();
+					}
+					?>
 				</div><!--/excerpt-->
 			</div><!--/post-->
 			<?php endwhile; ?>
